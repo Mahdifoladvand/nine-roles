@@ -1,0 +1,23 @@
+{
+  "name": "nine-roles",
+  "owner": {
+    "name": "Mahdi Foladvand",
+    "url": "https://github.com/Mahdifoladvand"
+  },
+  "description": "The Nine Roles team council skill for Claude Code.",
+  "version": "1.0.0",
+  "plugins": [
+    {
+      "name": "nine-roles",
+      "source": "./plugins/nine-roles",
+      "displayName": "Nine Roles",
+      "description": "Run a nine-role team council on any business question: full meeting with transcript, idea review, critic, scenarios, quality control, role assignment.",
+      "version": "1.0.0",
+      "author": { "name": "Mahdi Foladvand" },
+      "repository": "https://github.com/Mahdifoladvand/nine-roles",
+      "license": "MIT",
+      "keywords": ["meeting", "decision", "business", "critical-thinking"],
+      "category": "productivity"
+    }
+  ]
+}
