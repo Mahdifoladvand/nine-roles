@@ -239,6 +239,21 @@ How to fill it:
 - Delete a section only when it is empty, and write one line saying why. Leave
   no `{{placeholder}}` in the saved file.
 
+**The font.** The page asks for `Peyda` first, then falls back to Vazirmatn
+from Google Fonts. If `templates/peyda-inline.css` exists in this skill folder,
+put it into the saved page: replace the block between
+`/* PEYDA-FONT-START */` and `/* PEYDA-FONT-END */` with that file's contents.
+Do it with a shell command so the base64 never travels through the
+conversation:
+
+```bash
+node -e "const fs=require('fs'),p=process.argv[1],c=fs.readFileSync(process.argv[2],'utf8');fs.writeFileSync(p,fs.readFileSync(p,'utf8').replace(/\/\* PEYDA-FONT-START \*\/[\s\S]*?\/\* PEYDA-FONT-END \*\//,'/* PEYDA-FONT-START */\n'+c+'/* PEYDA-FONT-END */'))" <page.html> <skill>/templates/peyda-inline.css
+```
+
+Without that file, leave the marker where it is. Peyda is a commercial font
+from fontiran.com. Put it inside pages only when your organization holds a
+licence, and keep the font file out of any public repository.
+
 For the shorter modes, offer the page in one line instead of producing it
 unasked.
 

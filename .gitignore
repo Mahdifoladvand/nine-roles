@@ -4,3 +4,7 @@ node_modules/
 *.key
 .DS_Store
 Thumbs.db
+peyda-inline.css
+_fontcheck.html
+*.woff2
+*.ttf

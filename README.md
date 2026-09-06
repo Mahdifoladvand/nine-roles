@@ -127,6 +127,13 @@ The page is built from
 [`templates/meeting-page.html`](plugins/nine-roles/skills/nine-roles/templates/meeting-page.html)
 and saved next to your work as `meetings/<date>-<topic>.html`.
 
+**Font.** The page asks for Peyda first and falls back to Vazirmatn, which it
+loads from Google Fonts. Peyda is a commercial font from fontiran.com, so this
+repository ships no font file. If your organization holds a Peyda licence, put
+your `@font-face` blocks between the `PEYDA-FONT-START` and `PEYDA-FONT-END`
+markers in the template, and the page stays one self-contained file. Any other
+Persian font works the same way.
+
 Full examples: [Persian council](plugins/nine-roles/skills/nine-roles/examples/meeting-fa.md) ·
 [English idea review](plugins/nine-roles/skills/nine-roles/examples/idea-review-en.md) ·
 [the same council as a manager page](plugins/nine-roles/skills/nine-roles/examples/meeting-fa.html)

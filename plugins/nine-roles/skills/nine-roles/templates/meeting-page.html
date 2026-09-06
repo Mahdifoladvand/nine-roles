@@ -8,14 +8,19 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <style>
+/* PEYDA-FONT-START */
+/* Peyda is a commercial font from fontiran.com. If your organization holds a
+   licence, paste your @font-face blocks (base64 woff2) here and the page stays
+   one self-contained file. Without them the page falls back to Vazirmatn. */
+/* PEYDA-FONT-END */
 :root{
   --ground:#F1F4F2; --surface:#FFFFFF; --raise:#E9EEEB;
   --ink:#0F1A16; --muted:#5B6A65; --line:#D6DEDA;
   --accent:#0B5B4F; --accent-soft:#E2EFEB;
   --observed:#0B5B4F; --assumed:#8A5A00; --nodata:#5B6A65;
   --radius:10px;
-  --sans:"Vazirmatn",Tahoma,"Segoe UI",system-ui,sans-serif;
-  --mono:"IBM Plex Mono",ui-monospace,Consolas,monospace;
+  --sans:"Peyda","Vazirmatn",Tahoma,"Segoe UI",system-ui,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Consolas,"Peyda",Tahoma,monospace;
 }
 @media (prefers-color-scheme:dark){
   :root:not([data-theme="light"]){
