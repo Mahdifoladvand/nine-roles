@@ -1,5 +1,7 @@
 # Nine Roles
 
+*فارسی: [README.fa.md](README.fa.md)*
+
 A team council for Claude. You give it a question, it seats nine roles, runs
 the meeting, prints what every role said, and hands you a decision with owners
 and dates.
@@ -174,7 +176,7 @@ Full examples: [Persian council](plugins/nine-roles/skills/nine-roles/examples/m
 ### Claude Code, as a plugin (recommended)
 
 ```
-/plugin marketplace add Mahdifoladvand/nine-roles
+/plugin marketplace add mahdifooladvand/nine-roles
 ```
 
 ```
@@ -189,7 +191,7 @@ Copy the skill folder from this repo into your skills folder:
 - Windows: `C:\Users\<you>\.claude\skills\nine-roles`
 
 ```bash
-git clone https://github.com/Mahdifoladvand/nine-roles.git
+git clone https://github.com/mahdifooladvand/nine-roles.git
 cp -r nine-roles/plugins/nine-roles/skills/nine-roles ~/.claude/skills/
 ```
 
@@ -227,12 +229,16 @@ plugins/nine-roles/skills/nine-roles/
   SKILL.md                  the engine: modes, rounds, house rules, red lines
   references/
     roles.md                the nine role cards, with veto powers
-    formats.md              nine meeting formats, seat by seat
+    characters.md           who the nine are, and how each one talks
+    questions.md            ten families of question that change a decision
+    formats.md              ten meeting formats, seat by seat, with their stops
     evidence.md             the arithmetic, and the rules that stop fake numbers
+    ledger.md               the decisions ledger and the follow-up loop
     sectors.md              ten sectors: what to inspect, which number lies
     persian.md              Persian names, tags and typography
-  templates/                the manager page, minutes, org profile, idea review,
-                            three plans, inspection plan, role map
+  templates/                the manager page, minutes, org profile, decisions
+                            ledger, idea review, three plans, inspection plan,
+                            role map
   examples/                 one full Persian meeting (markdown and manager page),
                             one English idea review
 ```
@@ -241,46 +247,18 @@ plugins/nine-roles/skills/nine-roles/
 
 ## راهنمای فارسی
 
-**نُه نقش** یک شورای تیمی برای کلود است. موضوع را می‌دهید، نُه نقش سر میز
-می‌نشینند، جلسه برگزار می‌شود، حرف هر نقش را می‌بینید، و در پایان یک تصمیم
-با مسئول و تاریخ تحویل می‌گیرید.
+راهنمای کامل فارسی، با همه‌ی بخش‌های این صفحه، اینجاست:
+**[README.fa.md](README.fa.md)**
 
-برای هر سازمانی کار می‌کند: قنادی، کارخانه، کلینیک، شرکت نرم‌افزاری، خیریه.
-اگر فارسی بنویسید، کل جلسه فارسی است.
-
-**چه چیزی را درست می‌کند.** اگر از هوش مصنوعی درباره‌ی یک تصمیم کاری بپرسید،
-یک متن مطمئن با درصدهای ساختگی می‌گیرید. این مهارت این کار را نمی‌کند: هر عدد
-برچسب منبع دارد — `[مشاهده‌شده]`، `[فرض]`، یا `[بدون داده]` — و عددی که کسی
-ندارد، ساخته نمی‌شود. به‌جایش مشاور می‌گوید چطور، با چه هزینه‌ای و در چند روز
-می‌شود آن را فهمید.
-
-**چند قاعده‌ی سخت:**
-- هیچ اقدامی بدون نام مسئول و تاریخ ثبت نمی‌شود.
-- زیر ۳۰ مشاهده، درصد داده نمی‌شود؛ «۴ از ۱۱» نوشته می‌شود.
-- بازرسی مخفی از پرسنل طراحی نمی‌شود. کنترلی که نتوانید برای تیم بلند بخوانید،
-  کنترل نیست، تله است.
-- درباره‌ی رقیب فقط از اطلاعات عمومی استفاده می‌شود.
-- نقاد آخر حرف می‌زند، بعد از اینکه نقشه ساخته شد.
-
-**صفحه‌ی مدیر.** کسی که باید کار را انجام دهد، معمولاً کسی نیست که در جلسه
-بوده است. برای همین هر جلسه‌ی کامل یک فایل HTML مستقل هم می‌سازد: تصمیم در
-بالا، جدول مسئول و تاریخ زیر آن، و کل متن جلسه پایین‌تر، با برچسب منبع روی هر
-عدد. مدیر آن را روی گوشی باز می‌کند، پرینت می‌گیرد، یا همان‌طور ایمیل می‌کند.
-بدون سرور، بدون ورود به حساب، بدون فایل دیگر.
-
-**نصب:** دستور زیر را در Claude Code بزنید:
+نصب سریع در Claude Code:
 
 ```
-/plugin marketplace add Mahdifoladvand/nine-roles
+/plugin marketplace add mahdifooladvand/nine-roles
 ```
 
 ```
 /plugin install nine-roles@nine-roles
 ```
-
-یا پوشه‌ی `skills/nine-roles` را در `~/.claude/skills/` کپی کنید.
-
-**نمونه‌ی خروجی:** [جلسه‌ی کامل فارسی](plugins/nine-roles/skills/nine-roles/examples/meeting-fa.md)
 
 ---
 
