@@ -95,6 +95,7 @@ td.when,td.num{font-family:var(--mono);font-variant-numeric:tabular-nums;white-s
   text-transform:uppercase;color:var(--accent)}
 .ask ol{margin:0;padding-inline-start:1.2rem;display:flex;flex-direction:column;gap:.3rem}
 .ask .answer{border-top:1px dashed var(--accent);padding-top:.55rem}
+.ask .paused{font-family:var(--mono);font-size:.68rem;letter-spacing:.06em;color:var(--muted)}
 .swot{display:grid;grid-template-columns:1fr;gap:.9rem}
 @media(min-width:46rem){.swot{grid-template-columns:1fr 1fr}}
 .quad{border:1px solid var(--line);border-radius:var(--radius);background:var(--surface);
@@ -328,6 +329,7 @@ a{color:var(--accent)}
           <h3>{{L_ASKED}}</h3>
           <ol><li>{{ASK_1}}</li><li>{{ASK_2}}</li></ol>
           <p class="answer"><b>{{L_OWNER}}:</b> {{ANSWER}}</p>
+          <p class="paused">{{L_PAUSED}}</p>
         </div>
         <p>{{SAYS_2_AFTER}}</p>
       </div>

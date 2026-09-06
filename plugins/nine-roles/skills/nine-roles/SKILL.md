@@ -115,7 +115,9 @@ minute one and you kill ideas nobody has built yet.
 | 2 | Ideator | 5 to 8 options. Two of them use assets the company already owns. One costs almost nothing | 6 lines |
 | 3 | Spotter | 2 or 3 ideas hiding inside what was already said, credited to who said them | 3 lines |
 | 4 | Advisor | What we know, what we do not know, where the missing fact lives, what it costs to get | 4 lines |
+| **STOP 1** | **Coordinator asks the owner** | **The numbers the room is guessing at, plus one question about the decision itself. The message ends here.** | **wait** |
 | 5 | Analyst | Top 3 options on market, technical and money. Every number tagged | 8 lines |
+| **STOP 2** | **Coordinator asks the owner** | **The sharp question, while the answer can still change the outcome. The message ends here.** | **wait** |
 | 6 | Controller | How we see it working or breaking, what gets inspected, how often, by whom | 4 lines |
 | 7 | Organizer | Who does what, in what order, what runs in parallel, what blocks what | 4 lines |
 | 8 | Critic | The strongest option attacked at its weakest joint, then the three plans | 6 lines |
@@ -129,8 +131,26 @@ monologues are not a meeting.
 
 ## Stop and ask the owner
 
-Halfway through, the room needs a number that sits in the owner's head or in
-their till. Guessing at it wastes the meeting.
+A council is not one message. It is three. Rounds 1 to 4, then the owner
+answers. Round 5, then the owner answers again. Then rounds 6 to 11 with the
+minutes and the page.
+
+**The message that carries a stop ends at the stop.** No round after it, no
+minutes, no manager page, no summary, no "meanwhile here is the rest". You
+print the questions and you stop typing.
+
+Three ways this rule gets broken. All three are failures:
+
+- Running the whole meeting and putting the questions at the end. The answers
+  arrive too late to change anything, so the questions were decoration.
+- Asking, then answering on the owner's behalf: "I'll assume 40 for now, correct
+  me if wrong." That is a guess wearing a question mark.
+- Asking, then continuing "provisionally" in the same message. The owner now
+  has to argue with a finished plan instead of shaping one.
+
+End every stop with the same line, so the owner sees the meeting is holding:
+«جلسه اینجا متوقف است. منتظر جواب شما.» or "The meeting is paused here, waiting
+for you."
 
 The Coordinator stops the table and asks the human. Nobody else talks to them.
 
@@ -255,6 +275,10 @@ job.
 
 Print the transcript in the chat. The user wants to watch the meeting.
 
+A council arrives in three messages, broken by the two stops. Only the last one
+carries the minutes and the manager page. If you are writing the minutes in the
+same message as a question to the owner, you have already broken the meeting.
+
 ```
 **شیرین (هماهنگ‌کننده):** ...
 **نگار (ایده‌پرداز):** ...
@@ -373,7 +397,7 @@ unasked.
 If this session can publish a page to a link, offer that after the file is
 saved. Publish nothing without being asked.
 
-## Before you hand it over, check these eleven
+## Before you hand it over, check these twelve
 
 1. Do the nine voices disagree somewhere? Nine agreeing voices mean one voice
    in nine hats.
@@ -383,14 +407,16 @@ saved. Publish nothing without being asked.
    any number the owner actually holds?
 4. Did one question go past the numbers, and did the transcript show what the
    answer changed? A stop that changed nothing should not have happened.
-5. Does every number carry a producer tag?
-6. Does every action item carry a name and a date?
-7. Did the Critic name a number or a trigger instead of a feeling?
-8. Is there a physical action starting inside 48 hours?
-9. Does every option that reached the table carry a verdict and a reason,
+5. Did the message carrying each stop end at the stop, with nothing after it?
+   Questions collected at the end of a finished meeting are decoration.
+6. Does every number carry a producer tag?
+7. Does every action item carry a name and a date?
+8. Did the Critic name a number or a trigger instead of a feeling?
+9. Is there a physical action starting inside 48 hours?
+10. Does every option that reached the table carry a verdict and a reason,
    including the ones nobody got to?
-10. Does every blocker carry a name and a date?
-11. For a `council` or an `idea`: does the manager page exist on disk with no
+11. Does every blocker carry a name and a date?
+12. For a `council` or an `idea`: does the manager page exist on disk with no
    placeholder left in it?
 
 Any "no" means the meeting is not finished. Fix it before printing.
