@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="{{LANG}}" dir="{{DIR}}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{TITLE}}</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  --ground:#F1F4F2; --surface:#FFFFFF; --raise:#E9EEEB;
+  --ink:#0F1A16; --muted:#5B6A65; --line:#D6DEDA;
+  --accent:#0B5B4F; --accent-soft:#E2EFEB;
+  --observed:#0B5B4F; --assumed:#8A5A00; --nodata:#5B6A65;
+  --radius:10px;
+  --sans:"Vazirmatn",Tahoma,"Segoe UI",system-ui,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Consolas,monospace;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --ground:#0D1412; --surface:#131E1A; --raise:#182722;
+    --ink:#E4EDE9; --muted:#93A39D; --line:#25332E;
+    --accent:#6FD3BE; --accent-soft:#17302B;
+    --observed:#6FD3BE; --assumed:#E0A94A; --nodata:#93A39D;
+  }
+}
+:root[data-theme="dark"]{
+  --ground:#0D1412; --surface:#131E1A; --raise:#182722;
+  --ink:#E4EDE9; --muted:#93A39D; --line:#25332E;
+  --accent:#6FD3BE; --accent-soft:#17302B;
+  --observed:#6FD3BE; --assumed:#E0A94A; --nodata:#93A39D;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--sans);line-height:1.75;
+  -webkit-font-smoothing:antialiased}
+.page{max-width:56rem;margin:0 auto;padding:clamp(1rem,3vw,2.5rem) clamp(1rem,4vw,2rem) 4rem;
+  display:flex;flex-direction:column;gap:1.75rem}
+h1,h2,h3{margin:0;text-wrap:balance;line-height:1.3}
+h1{font-size:clamp(1.45rem,4vw,2rem);font-weight:700;letter-spacing:-.01em}
+h2{font-size:.78rem;font-family:var(--mono);font-weight:500;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--muted)}
+p{margin:0}
+.meta{display:flex;flex-wrap:wrap;gap:.5rem 1.25rem;font-family:var(--mono);font-size:.76rem;
+  color:var(--muted);letter-spacing:.04em}
+.meta span{white-space:nowrap}
+.masthead{display:flex;flex-direction:column;gap:.6rem;padding-bottom:1.25rem;
+  border-bottom:2px solid var(--ink)}
+.decision{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+  padding:1.25rem 1.35rem;display:flex;flex-direction:column;gap:.7rem;
+  border-inline-start:5px solid var(--accent)}
+.decision .verdict{font-size:1.12rem;font-weight:700}
+.decision .because{color:var(--muted);font-size:.95rem}
+section{display:flex;flex-direction:column;gap:.75rem}
+.tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:var(--radius);
+  background:var(--surface)}
+table{border-collapse:collapse;width:100%;min-width:34rem;font-size:.9rem}
+th,td{text-align:start;padding:.7rem .9rem;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-family:var(--mono);font-size:.72rem;font-weight:500;letter-spacing:.08em;
+  text-transform:uppercase;color:var(--muted);background:var(--raise);white-space:nowrap}
+tr:last-child td{border-bottom:none}
+td.when,td.num{font-family:var(--mono);font-variant-numeric:tabular-nums;white-space:nowrap}
+.who{font-weight:500}
+.pair{display:grid;grid-template-columns:1fr;gap:1.75rem}
+@media(min-width:52rem){.pair{grid-template-columns:1fr 1fr}}
+.legend{display:flex;flex-wrap:wrap;gap:.5rem .9rem;font-size:.8rem;color:var(--muted)}
+.tag{font-family:var(--mono);font-size:.72rem;letter-spacing:.03em;padding:.08em .5em;
+  border-radius:4px;white-space:nowrap;display:inline-block}
+.tag.observed{color:var(--observed);border:1px solid var(--observed);background:var(--accent-soft)}
+.tag.assumed{color:var(--assumed);border:1px dashed var(--assumed)}
+.tag.nodata{color:var(--nodata);border:1px dotted var(--nodata);text-decoration:line-through;
+  text-decoration-thickness:1px}
+.turn{display:grid;grid-template-columns:1fr;gap:.35rem;padding:1rem 0;
+  border-bottom:1px solid var(--line)}
+.turn:last-child{border-bottom:none}
+@media(min-width:46rem){
+  .turn{grid-template-columns:9.5rem 1fr;gap:1.5rem;align-items:start}
+  .role{position:sticky;top:1rem}
+}
+.role{font-family:var(--mono);font-size:.78rem;font-weight:500;color:var(--accent);
+  letter-spacing:.02em}
+.role .seat{display:block;color:var(--muted);font-size:.68rem;letter-spacing:.06em}
+.says{display:flex;flex-direction:column;gap:.45rem;max-width:62ch;font-size:.97rem}
+.note{font-size:.85rem;color:var(--muted);border-inline-start:2px solid var(--line);
+  padding-inline-start:.85rem}
+.foot{font-size:.8rem;color:var(--muted);border-top:1px solid var(--line);padding-top:1rem;
+  display:flex;flex-wrap:wrap;gap:.4rem 1rem;justify-content:space-between}
+a{color:var(--accent)}
+@media print{
+  :root{--ground:#fff;--surface:#fff;--raise:#fff;--ink:#000;--muted:#444;--line:#bbb;
+    --accent:#000;--accent-soft:#fff}
+  .page{max-width:none;padding:0}
+  .turn,.decision,.tablewrap{break-inside:avoid}
+}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header class="masthead">
+    <h1>{{TITLE}}</h1>
+    <div class="meta">
+      <span>{{ORG}}</span>
+      <span>{{DATE}}</span>
+      <span>{{MODE}}</span>
+      <span>{{SEATS_PRESENT}}</span>
+    </div>
+  </header>
+
+  <div class="decision">
+    <h2>{{L_DECISION}}</h2>
+    <p class="verdict">{{DECISION}}</p>
+    <p class="because">{{BECAUSE}}</p>
+  </div>
+
+  <section>
+    <h2>{{L_ACTIONS}}</h2>
+    <div class="tablewrap">
+      <table>
+        <thead><tr>
+          <th>#</th><th>{{L_ACTION}}</th><th>{{L_OWNER}}</th><th>{{L_BY}}</th><th>{{L_DONE}}</th>
+        </tr></thead>
+        <tbody>
+          <tr><td class="num">1</td><td>{{ACTION_1}}</td><td class="who">{{OWNER_1}}</td>
+            <td class="when">{{BY_1}}</td><td>{{DONE_1}}</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="note">{{FIRST_48H}}</p>
+  </section>
+
+  <div class="pair">
+    <section>
+      <h2>{{L_DISSENT}}</h2>
+      <div class="tablewrap">
+        <table style="min-width:20rem">
+          <thead><tr><th>{{L_WHO}}</th><th>{{L_OBJECTION}}</th><th>{{L_TRIGGER}}</th></tr></thead>
+          <tbody>
+            <tr><td class="who">{{DISSENT_WHO_1}}</td><td>{{DISSENT_WHAT_1}}</td>
+              <td>{{DISSENT_TRIGGER_1}}</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section>
+      <h2>{{L_UNKNOWNS}}</h2>
+      <div class="tablewrap">
+        <table style="min-width:20rem">
+          <thead><tr><th>{{L_UNKNOWN}}</th><th>{{L_HOW}}</th><th>{{L_COST}}</th><th>{{L_DAYS}}</th></tr></thead>
+          <tbody>
+            <tr><td>{{UNKNOWN_1}}</td><td>{{HOW_1}}</td><td class="num">{{COST_1}}</td>
+              <td class="num">{{DAYS_1}}</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </div>
+
+  <section>
+    <h2>{{L_TRANSCRIPT}}</h2>
+    <div class="legend">
+      <span class="tag observed">{{L_TAG_OBSERVED}}</span>
+      <span class="tag assumed">{{L_TAG_ASSUMED}}</span>
+      <span class="tag nodata">{{L_TAG_NODATA}}</span>
+      <span>{{LEGEND_NOTE}}</span>
+    </div>
+
+    <div class="turn">
+      <div class="role">{{ROLE_1}}<span class="seat">{{ROLE_1_EN}}</span></div>
+      <div class="says">
+        <p>{{SAYS_1}}</p>
+      </div>
+    </div>
+
+  </section>
+
+  <footer class="foot">
+    <span>{{L_REVIEW}}: {{REVIEW_DATE}}</span>
+    <span>{{SEATS_EMPTY}}</span>
+  </footer>
+
+</div>
+</body>
+</html>

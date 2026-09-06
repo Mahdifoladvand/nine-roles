@@ -175,9 +175,44 @@ the user says "long" or «مفصل», every round doubles.
 Then print the minutes, using `templates/minutes.md`: the decision, owners with
 dates, recorded dissent, the unknowns with their price, and the review date.
 
-Offer once to save both to a file. Do not save without being asked.
+## The manager view - always produce it
 
-## Before you hand it over - check these five
+The person who has to act on a meeting is usually not the person who ran it. A
+meeting that exists only in a chat window has not reached them. So `council`
+and `idea` do not end in the chat.
+
+Fill `templates/meeting-page.html` and save it as
+`meetings/<date>-<short-topic>.html` in the folder the user is working in.
+Then tell the user the path, in one line.
+
+It is one self-contained file. It opens in any browser, reads on a phone,
+prints to PDF, and can be emailed or dropped on a shared drive with nothing
+else attached.
+
+How to fill it:
+
+- Replace every `{{...}}` placeholder. A Persian meeting sets `{{LANG}}` to
+  `fa` and `{{DIR}}` to `rtl`. English sets `en` and `ltr`.
+- Placeholders starting `{{L_...}}` are the headings and column titles.
+  Translate them into the language of the meeting. The fixed Persian words are
+  in `references/persian.md`.
+- Repeat the `<tr>` row for each action, each dissent and each unknown. Repeat
+  the `.turn` block for each speaker turn, in the order they spoke.
+- Wrap every evidence tag in its span: `<span class="tag observed">`,
+  `tag assumed`, `tag nodata`. That is the point of the page. A manager must
+  see at a glance which numbers were measured and which were assumed.
+- Delete a section only when it is genuinely empty, and write one line saying
+  why it is empty. Never leave a `{{placeholder}}` in the saved file.
+
+For the shorter modes - `triage`, `premortem`, `scenarios`, `control`,
+`assign`, `intel`, `retro` - offer the page in one line rather than producing
+it unasked.
+
+If this session can publish a page to a link (an artifact, a document
+connector, a company wiki), offer that in one line after the file is saved.
+Never publish anything without being asked.
+
+## Before you hand it over - check these six
 
 1. Do the nine voices disagree anywhere? Nine voices that agree are one voice
    wearing nine hats.
@@ -185,6 +220,8 @@ Offer once to save both to a file. Do not save without being asked.
 3. Does every action item carry a name and a date?
 4. Did the Critic name a number or a trigger, not a feeling?
 5. Is there a physical action starting inside 48 hours?
+6. For a `council` or an `idea`: does the manager page exist on disk, with no
+   placeholder left in it?
 
 Any "no" means the meeting is not finished. Fix it before printing.
 
@@ -197,5 +234,6 @@ Any "no" means the meeting is not finished. Fix it before printing.
 | `references/evidence.md` | The Analyst speaks, or any number appears |
 | `references/sectors.md` | The organization's sector is known |
 | `references/persian.md` | Answering in Persian |
-| `templates/` | Producing minutes, an org profile, or a plan document |
+| `templates/meeting-page.html` | Every council and idea review - the manager's page |
+| `templates/` | Minutes, an org profile, a plan document, an inspection plan |
 | `examples/` | Unsure what good output looks like |

@@ -97,8 +97,25 @@ Decision: not this year, measure for three weeks first - because the number the
 whole decision rests on costs nothing to find out, and 770M is locked up if it
 is wrong.
 
+## The manager page
+
+The person who has to act on a meeting is usually not the person who ran it, so
+a council does not end in a chat window.
+
+Every council and idea review also writes one self-contained HTML file: the
+decision at the top, the owners and dates under it, the recorded dissent and the
+priced unknowns beside each other, and the full transcript below, where every
+figure carries its evidence tag. A manager opens it on a phone, prints it to
+PDF, or emails it as it is. No server, no login, no other file needed.
+
+The page is built from
+[`templates/meeting-page.html`](plugins/nine-roles/skills/nine-roles/templates/meeting-page.html)
+and saved next to your work as `meetings/<date>-<topic>.html`.
+
 Full examples: [Persian council](plugins/nine-roles/skills/nine-roles/examples/meeting-fa.md) ·
-[English idea review](plugins/nine-roles/skills/nine-roles/examples/idea-review-en.md)
+[English idea review](plugins/nine-roles/skills/nine-roles/examples/idea-review-en.md) ·
+[the same council as a manager page](plugins/nine-roles/skills/nine-roles/examples/meeting-fa.html)
+(download the file and open it in a browser)
 
 ---
 
@@ -164,9 +181,10 @@ plugins/nine-roles/skills/nine-roles/
     evidence.md             the arithmetic, and the rules that stop fake numbers
     sectors.md              ten sectors: what to inspect, which number lies
     persian.md              Persian names, tags and typography
-  templates/                minutes, org profile, idea review, three plans,
-                            inspection plan, role map
-  examples/                 one full Persian meeting, one English idea review
+  templates/                the manager page, minutes, org profile, idea review,
+                            three plans, inspection plan, role map
+  examples/                 one full Persian meeting (markdown and manager page),
+                            one English idea review
 ```
 
 ---
@@ -193,6 +211,12 @@ plugins/nine-roles/skills/nine-roles/
   کنترل نیست، تله است.
 - درباره‌ی رقیب فقط از اطلاعات عمومی استفاده می‌شود.
 - نقاد آخر حرف می‌زند، بعد از اینکه نقشه ساخته شد.
+
+**صفحه‌ی مدیر.** کسی که باید کار را انجام دهد، معمولاً کسی نیست که در جلسه
+بوده است. برای همین هر جلسه‌ی کامل یک فایل HTML مستقل هم می‌سازد: تصمیم در
+بالا، جدول مسئول و تاریخ زیر آن، و کل متن جلسه پایین‌تر، با برچسب منبع روی هر
+عدد. مدیر آن را روی گوشی باز می‌کند، پرینت می‌گیرد، یا همان‌طور ایمیل می‌کند.
+بدون سرور، بدون ورود به حساب، بدون فایل دیگر.
 
 **نصب:** دستور زیر را در Claude Code بزنید:
 
