@@ -1,9 +1,9 @@
 ---
-name: nine-roles
+name: shora
 description: Run a nine-role team council on any business or organizational question. Hold a full meeting and print the transcript of what each role said, review an idea for feasibility, stress-test a plan with a dedicated critic, build realistic/optimistic/pessimistic scenarios, design quality-control inspections, assign the nine roles to real staff, or run a pre-mortem or retro. Use whenever someone asks for a meeting, a brainstorm, a second opinion, a devil's advocate, a go/no-go, a feasibility check, or "what could go wrong" - for any company, any sector, any size. Answers in the user's own language, including Persian.
 ---
 
-# Nine Roles
+# Shora, the nine-role council
 
 This skill runs a meeting with nine roles, prints what each one said, and ends
 with a decision that has names and dates against it.
@@ -86,8 +86,8 @@ each one.
 If the user answers none of them, run it anyway. Put your assumptions in the
 first line of the transcript, tagged `[ASSUMED]` or `[فرض]`.
 
-Before the first meeting, look for an organization profile at `./nine-roles.md`
-or `./.nine-roles/org.md` and read it. If none exists and the user has run two
+Before the first meeting, look for an organization profile at `./shora.md`
+or `./.shora/org.md` and read it. If none exists and the user has run two
 meetings, offer once to write one from `templates/org-profile.md`. That file is
 what makes the council fit this company.
 
@@ -106,17 +106,17 @@ from `templates/decisions-ledger.md`.
 
 ## The nine roles
 
-| # | Role | نقش | Job in one line |
-|---|---|---|---|
-| 1 | Ideator | ایده‌پرداز | Puts options on the table, including the cheap ones |
-| 2 | Spotter | کاشف | Stops the meeting on the good remark nobody noticed |
-| 3 | Analyst | تحلیل‌گر | Tests each option on market, technical and money |
-| 4 | Closer | نتیجه‌گیر | Names the first physical action and gets it done |
-| 5 | Organizer | سازمان‌دهنده | Hands out the work, sequences it, spots the collision |
-| 6 | Controller | کنترلر | Says how we will know it worked, then inspects |
-| 7 | Advisor | مشاور | Brings the facts the team lacks, and their price |
-| 8 | Critic | نقاد | Attacks the finished plan until it survives |
-| 9 | Coordinator | هماهنگ‌کننده | Runs the table, decides, covers an empty seat |
+| # | Role | نقش | Job in one line | کار در یک خط |
+|---|---|---|---|---|
+| 1 | Ideator | ایده‌پرداز | Puts options on the table, including the cheap ones | گزینه روی میز می‌گذارد، از جمله گزینه‌های ارزان |
+| 2 | Spotter | کاشف | Stops the meeting on the good remark nobody noticed | جلسه را روی حرف خوبی که کسی نشنید نگه می‌دارد |
+| 3 | Analyst | تحلیل‌گر | Tests each option on market, technical and money | هر گزینه را روی بازار، فنی و مالی می‌سنجد |
+| 4 | Closer | نتیجه‌گیر | Names the first physical action and gets it done | نخستین اقدام فیزیکی را نام می‌برد و تمامش می‌کند |
+| 5 | Organizer | سازمان‌دهنده | Hands out the work, sequences it, spots the collision | کار را پخش می‌کند، ترتیب می‌دهد، برخورد را می‌بیند |
+| 6 | Controller | کنترلر | Says how we will know it worked, then inspects | می‌گوید از کجا می‌فهمیم جواب داد، و بازرسی می‌کند |
+| 7 | Advisor | مشاور | Brings the facts the team lacks, and their price | اطلاعاتی را که تیم ندارد می‌آورد، با قیمتش |
+| 8 | Critic | نقاد | Attacks the finished plan until it survives | به نقشه‌ی تمام‌شده حمله می‌کند تا دوام بیاورد |
+| 9 | Coordinator | هماهنگ‌کننده | Runs the table, decides, covers an empty seat | میز را می‌گرداند، تصمیم می‌گیرد، صندلی خالی را پر می‌کند |
 
 Read `references/roles.md` before running `council`, `idea` or `assign`. It
 carries each role's standing questions, required output, voice, failure mode

@@ -1,5 +1,5 @@
 {
-  "name": "nine-roles",
+  "name": "shora",
   "owner": {
     "name": "Mahdi Foladvand",
     "url": "https://github.com/mahdifooladvand"
@@ -8,13 +8,13 @@
   "version": "1.0.0",
   "plugins": [
     {
-      "name": "nine-roles",
-      "source": "./plugins/nine-roles",
-      "displayName": "Nine Roles",
+      "name": "shora",
+      "source": "./plugins/shora",
+      "displayName": "Shora",
       "description": "Run a nine-role team council on any business question: full meeting with transcript, idea review, critic, scenarios, quality control, role assignment.",
       "version": "1.0.0",
       "author": { "name": "Mahdi Foladvand" },
-      "repository": "https://github.com/mahdifooladvand/nine-roles",
+      "repository": "https://github.com/mahdifooladvand/shora",
       "license": "MIT",
       "keywords": ["meeting", "decision", "business", "critical-thinking"],
       "category": "productivity"

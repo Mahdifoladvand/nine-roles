@@ -1,278 +1,271 @@
-# Nine Roles
+# شورا
 
-*فارسی: [README.fa.md](README.fa.md)*
+**تیم تصمیم‌گیری مدیریتی.** نُه نقش، یک میز، یک تصمیم.
 
-A team council for Claude. You give it a question, it seats nine roles, runs
-the meeting, prints what every role said, and hands you a decision with owners
-and dates.
+*English: [README.en.md](README.en.md)*
 
-Works for any organization: a bakery, a factory, a clinic, a software company,
-a charity. Answers in your language, including Persian.
+یک شورای تیمی برای کلود. موضوع را می‌دهید، نُه نقش سر میز می‌نشینند، جلسه
+برگزار می‌شود، حرف هر نقش را می‌بینید، و در پایان یک تصمیم با نام مسئول و
+تاریخ تحویل می‌گیرید.
 
-**The problem it fixes.** Ask an AI about a business decision and you get a
-confident essay with invented percentages. Ask a real team and you get whoever
-speaks loudest. This skill does neither: it runs a structured meeting, tags
-every number with where it came from, and refuses to invent the ones nobody
-has.
+برای هر سازمانی کار می‌کند: قنادی، کارخانه، کلینیک، شرکت نرم‌افزاری، مدرسه،
+خیریه. اگر فارسی بنویسید، کل جلسه فارسی است.
+
+**چه چیزی را درست می‌کند.** اگر از هوش مصنوعی درباره‌ی یک تصمیم کاری بپرسید،
+یک متن مطمئن با درصدهای ساختگی می‌گیرید. اگر از یک تیم واقعی بپرسید، حرف کسی
+را می‌شنوید که بلندتر حرف می‌زند. این مهارت هیچ‌کدام را نمی‌کند. جلسه‌ی
+ساختاریافته می‌گذارد، روی هر عدد برچسب منبع می‌زند، و عددی را که کسی ندارد
+نمی‌سازد.
 
 ---
 
-## The nine roles
+## نُه نقش
 
-| # | Role | نقش | What it does |
+| # | نقش | English | چه کار می‌کند |
 |---|---|---|---|
-| 1 | Ideator | ایده‌پرداز | Puts options on the table, including the cheap ones |
-| 2 | Spotter | کاشف | Stops the meeting on the good remark nobody noticed |
-| 3 | Analyst | تحلیل‌گر | Tests each option on market, technical and money |
-| 4 | Closer | نتیجه‌گیر | Names the first physical action, and gets it done |
-| 5 | Organizer | سازمان‌دهنده | Assigns the work, sequences it, spots the collision |
-| 6 | Controller | کنترلر | Says how we will know it worked, and inspects |
-| 7 | Advisor | مشاور | Brings the facts the team lacks, and their price |
-| 8 | Critic | نقاد | Attacks the finished plan until it survives |
-| 9 | Coordinator | هماهنگ‌کننده | Runs the table, decides, covers an empty seat |
+| ۱ | ایده‌پرداز | Ideator | گزینه روی میز می‌گذارد، از جمله گزینه‌های ارزان |
+| ۲ | کاشف | Spotter | جلسه را روی حرف خوبی که کسی نشنید نگه می‌دارد |
+| ۳ | تحلیل‌گر | Analyst | هر گزینه را روی بازار، فنی و مالی می‌سنجد |
+| ۴ | نتیجه‌گیر | Closer | نخستین اقدام فیزیکی را نام می‌برد و تمامش می‌کند |
+| ۵ | سازمان‌دهنده | Organizer | کار را پخش می‌کند، ترتیب می‌دهد، برخورد را می‌بیند |
+| ۶ | کنترلر | Controller | می‌گوید از کجا می‌فهمیم جواب داد، و بازرسی می‌کند |
+| ۷ | مشاور | Advisor | اطلاعاتی را که تیم ندارد می‌آورد، با قیمتش |
+| ۸ | نقاد | نقاد | به نقشه‌ی تمام‌شده حمله می‌کند تا دوام بیاورد |
+| ۹ | هماهنگ‌کننده | Coordinator | میز را می‌گرداند، تصمیم می‌گیرد، صندلی خالی را پر می‌کند |
 
-A team of five people can still play nine roles. A role is a job inside a
-meeting, not a job title.
+تیم پنج‌نفره هم می‌تواند نُه نقش را بازی کند. نقش یک کار داخل جلسه است، نه یک
+عنوان شغلی.
 
 ---
 
-## Nine ways to use it
+## نُه راه استفاده
 
-| Say this | You get |
+| این را بگویید | این را می‌گیرید |
 |---|---|
-| "Hold a meeting about opening a second branch" | Full council: transcript, decision, owners, dates |
-| "Quick take: should we raise prices 8%?" | A twelve-line verdict - do it, test it, or no because |
-| "Review this idea" | Feasibility on market, technical and money, then go / no-go |
-| "What could go wrong with this plan?" | Pre-mortem: ranked failures, early signals, guards |
-| "Plan for next year, the currency is unstable" | Three plans with observable switch triggers |
-| "How do we know the branches follow the rule?" | An inspection plan you could read aloud to the team |
-| "Here is my team, who should do what?" | The nine roles mapped to real people, plus the gaps |
-| "What do we not know?" | An information plan with costs and days |
-| "The campaign finished" | A four-line retro, written as rules |
-| "What happened to that decision?" | The ledger read back: predicted against actual, and what you still owe |
+| «جلسه بذارید درباره‌ی شعبه‌ی دوم» | شورای کامل: متن جلسه، تصمیم، مسئول، تاریخ |
+| «سریع بگو: قیمت را ۸ درصد ببریم بالا؟» | حکم دوازده‌خطی: انجام بده، اول آزمایش کن، یا نه چون |
+| «این ایده را بررسی کنید» | سنجش بازار، فنی و مالی، بعد برو یا نرو |
+| «چه چیزی ممکن است خراب شود؟» | پیش‌مرگ: فهرست شکست‌ها، نشانه‌ی زودهنگام، محافظ |
+| «برای سال بعد نقشه بریز، ارز بی‌ثبات است» | سه نقشه با محرک قابل مشاهده |
+| «از کجا بفهمیم شعبه‌ها قاعده را رعایت می‌کنند؟» | نقشه‌ی بازرسی که می‌شود برای تیم بلند خواند |
+| «این تیم من است، کی چه کاری بکند؟» | نُه نقش روی آدم‌های واقعی، به‌علاوه‌ی صندلی‌های خالی |
+| «چه چیزهایی را نمی‌دانیم؟» | نقشه‌ی اطلاعات با هزینه و روز |
+| «آن کمپین تمام شد» | بازنگری چهارخطی، درس‌ها به‌شکل قاعده |
+| «آن تصمیم چه شد؟» | دفتر خوانده می‌شود: پیش‌بینی در برابر واقعیت، و آنچه بدهکاریم |
 
 ---
 
-## What it will not do
+## چه کارهایی را نمی‌کند
 
-This matters more than the feature list.
+این بخش از فهرست قابلیت‌ها مهم‌تر است.
 
-- **It does not invent numbers.** Market sizes, growth rates, competitor
-  revenue, benchmarks, studies: if you did not supply it, it is marked
-  `[NO DATA]` and the Advisor tells you how to find out, what it costs, and how
-  many days it takes.
-- **Every figure carries its producer:** `[OBSERVED]`, `[ASSUMED]` or
-  `[NO DATA]`. A measured zero and a missing number never look the same.
-- **No percentages on small samples.** Under 30 observations you get "4 of 11".
-- **No action item without a name and a date.**
-- **No secret tests on your own staff.** A control you could not describe to
-  the team afterwards is a trap, not a control - the skill will redesign it.
-- **No competitor work beyond public information.** No trade secrets, no
-  inducing anyone to break a contract, no pretending to be someone else.
-- **No personal data without consent**, and the skill names which law you
-  should check rather than pretending to be your lawyer.
-- **No legal, medical, tax or investment advice.** For those, the output is
-  "who to ask".
-
----
-
-## What the output looks like
-
-From a real run - a confectionery with 14 staff, deciding on a second branch:
-
-> **Spotter:** Hold on. At the start you said you send boxes to two offices on
-> Thursdays. So you already have a delivery route and corporate customers, and
-> nobody has counted them.
->
-> **Analyst:** I worked out the second branch. Rent 28, four salaries 96,
-> energy and supplies 15. That's 139M a month `[ASSUMED]`. Divide by the
-> 101,000 each order leaves you and it needs 1,376 orders a month. **46 a
-> day.** The current branch does 129 `[OBSERVED]`. Daily orders in the new
-> neighbourhood: nobody knows `[NO DATA]`.
->
-> **Critic:** That 42% margin is last year's flour and oil. At 35% the
-> break-even goes to 55 a day. So the number this whole decision sits on is
-> itself an assumption.
->
-> **Closer:** Saturday morning the cashier starts asking which neighbourhood
-> people came from. Ms Rezaei. Costs nothing, ten seconds a sale.
-
-Decision: not this year, measure for three weeks first - because the number the
-whole decision rests on costs nothing to find out, and 770M is locked up if it
-is wrong.
-
-## The meeting stops and asks you
-
-Twice in a council, the meeting halts. The Coordinator asks you at most three
-questions and the message ends there. Nothing else is printed until you answer.
-
-One of those questions is never about a number. It asks what the decision is
-for, what would make you stop, what you cannot take back, or what would change
-your mind. The bank of them is in
-[references/questions.md](plugins/nine-roles/skills/nine-roles/references/questions.md),
-with a rule attached: before asking, the council writes down what changes with
-each plausible answer, and cuts the question if the answer changes nothing.
-
-Your answers retag figures from assumed to observed, and the transcript says
-what each answer changed.
-
-## It remembers the last decision
-
-Every council appends to `decisions.md` in your folder: the decision, the
-numbers it rested on with their tags, the owners, the triggers to watch, and
-what was still unknown. The next meeting reads it first, so the room knows what
-money and whose hours are already committed, and never asks you the same deep
-question twice.
-
-When a review date arrives, `followup` reads the ledger back: what we predicted
-against what happened, which trigger fired, and what you still owe from that
-decision.
-
-## The manager page
-
-The person who has to act on a meeting is usually not the person who ran it, so
-a council does not end in a chat window.
-
-Every council and idea review also writes one self-contained HTML file. A
-manager opens it on a phone, prints it to PDF, or emails it as it is. No
-server, no login, no other file needed.
-
-The page answers the questions a manager asks in order:
-
-1. **What did you look at?** Every option that reached the table, with a
-   verdict and a reason. Options nobody discussed say so, instead of
-   disappearing.
-2. **What did you decide?**
-3. **Why?** Two or three reasons, each carrying its number.
-4. **What is in the way?** Each blocker with what it stops, who clears it, by
-   when, and what happens if nobody does.
-5. **Who does what, by when?**
-6. **What do we still not know**, and what does finding out cost?
-
-Then the full transcript, where every figure carries its evidence tag. The
-header counts the meeting: options examined, speaking turns, and how many
-numbers were measured against how many were assumed.
-
-The page is built from
-[`templates/meeting-page.html`](plugins/nine-roles/skills/nine-roles/templates/meeting-page.html)
-and saved next to your work as `meetings/<date>-<topic>.html`.
-
-**Font.** The page asks for Peyda first and falls back to Vazirmatn, which it
-loads from Google Fonts. Peyda is a commercial font from fontiran.com, so this
-repository ships no font file. If your organization holds a Peyda licence, put
-your `@font-face` blocks between the `PEYDA-FONT-START` and `PEYDA-FONT-END`
-markers in the template, and the page stays one self-contained file. Any other
-Persian font works the same way.
-
-Full examples: [Persian council](plugins/nine-roles/skills/nine-roles/examples/meeting-fa.md) ·
-[English idea review](plugins/nine-roles/skills/nine-roles/examples/idea-review-en.md) ·
-[the same council as a manager page](plugins/nine-roles/skills/nine-roles/examples/meeting-fa.html)
-(download the file and open it in a browser)
+- **عدد نمی‌سازد.** اندازه‌ی بازار، نرخ رشد، درآمد رقیب، معیار صنعت، مطالعه:
+  اگر شما ندهید، `[بدون داده]` علامت می‌خورد و مشاور می‌گوید چطور، با چه
+  هزینه‌ای و در چند روز می‌شود فهمید.
+- **هر رقم برچسب منبع دارد:** `[مشاهده‌شده]`، `[فرض]`، `[بدون داده]`. صفرِ
+  اندازه‌گیری‌شده و عددِ نداشته هرگز شبیه هم نوشته نمی‌شوند.
+- **عدد محاسبه‌شده ضعیف‌ترین برچسب ورودی‌هایش را می‌گیرد.** ضرب یک عدد
+  مشاهده‌شده در یک حاشیه‌ی فرضی، جواب فرضی می‌دهد. حساب‌کردن، حدس را به
+  اندازه‌گیری تبدیل نمی‌کند.
+- **بازه‌ی به‌یادآورده بازه می‌ماند.** «ده دوازده نفر» یازده نفر نیست.
+- **زیر ۳۰ مشاهده، درصد داده نمی‌شود.** «۴ از ۱۱» نوشته می‌شود.
+- **هیچ اقدامی بدون نام مسئول و تاریخ ثبت نمی‌شود.**
+- **بازرسی مخفی از پرسنل طراحی نمی‌شود.** کنترلی که نتوانید برای همان تیم بلند
+  بخوانید، کنترل نیست، تله است.
+- **درباره‌ی رقیب فقط اطلاعات عمومی.** بدون اسرار تجاری، بدون واداشتن کسی به
+  شکستن قرارداد، بدون جا زدن خود به‌جای دیگری.
+- **داده‌ی شخصی بدون رضایت جمع نمی‌شود**، و مهارت می‌گوید کدام قانون را باید
+  بررسی کنید، به‌جای اینکه وکیل شما باشد.
+- **مشاوره‌ی حقوقی، پزشکی، مالیاتی و سرمایه‌گذاری نمی‌دهد.** برای این‌ها
+  می‌گوید از چه کسی بپرسید.
 
 ---
 
-## Install
+## خروجی چه شکلی است
 
-### Claude Code, as a plugin (recommended)
+از یک اجرای واقعی: قنادی با ۱۴ پرسنل، تصمیم درباره‌ی شعبه‌ی دوم.
+
+> **فرهاد (کاشف):** یک لحظه. اول جلسه گفتی پنجشنبه‌ها برای دو تا دفتر جعبه
+> می‌فرستید. یعنی مسیر تحویل و مشتری شرکتی را دارید و هیچ‌کس نشمرده؟
+>
+> **مریم (تحلیل‌گر):** شعبه‌ی دوم را حساب کردم. اجاره ۲۸، حقوق چهار نفر ۹۶،
+> انرژی ۱۵. ماهی ۱۳۹ میلیون `[فرض]`. تقسیم بر سهم هر سفارش می‌شود ماهی ۱۳۷۶
+> سفارش. **روزی ۴۶ تا.** شعبه‌ی فعلی روزی ۱۲۹ تا دارد `[مشاهده‌شده]`. سفارش
+> روزانه در محله‌ی جدید `[بدون داده]`.
+>
+> **بهرام (نقاد):** آن ۴۲ درصد مال آرد و روغن پارسال است. با ۳۵ درصد، سربه‌سر
+> می‌رود روی ۵۵ تا در روز. عددی که کل تصمیم روی آن سوار است، خودش فرض است.
+>
+> **رضا (نتیجه‌گیر):** شنبه صبح صندوق‌دار شروع می‌کند به پرسیدن اسم محله.
+> خانم رضایی. هزینه صفر، ده ثانیه سر هر فروش.
+
+تصمیم: امسال نه، اول ده روز اندازه‌گیری. چون عددی که تصمیم روی آن سوار است
+صفر ریال هزینه دارد، و اشتباه ۷۷۰ میلیون را قفل می‌کند.
+
+---
+
+## جلسه می‌ایستد و از شما می‌پرسد
+
+دو بار در هر شورا، جلسه متوقف می‌شود. هماهنگ‌کننده حداکثر سه سؤال می‌پرسد و
+پیام همان‌جا تمام می‌شود. تا شما جواب ندهید، چیزی دیگر نوشته نمی‌شود.
+
+یکی از آن سؤال‌ها هرگز درباره‌ی عدد نیست. می‌پرسد این تصمیم واقعاً برای چیست،
+چه چیزی ببینید که جمعش کنید، چه چیزی برگشت‌پذیر نیست، یا چه چیزی نظرتان را
+عوض می‌کند. بانک سؤال‌ها در
+[references/questions.md](plugins/shora/skills/shora/references/questions.md)
+است، با یک قاعده‌ی سخت: پیش از پرسیدن باید نوشته شود که با هر جواب ممکن جلسه
+چه کار متفاوتی می‌کند. سؤالی که جوابش چیزی را عوض نکند، حذف می‌شود.
+
+جواب شما برچسب عددها را از «فرض» به «مشاهده‌شده» می‌برد، و متن جلسه می‌نویسد
+که آن جواب چه چیزی را عوض کرد.
+
+---
+
+## تصمیم قبلی را به یاد می‌آورد
+
+هر شورا در فایل `decisions.md` کنار کار شما یک ورودی اضافه می‌کند: تصمیم،
+عددهایی که روی آن‌ها سوار بود با برچسب، مسئول‌ها، محرک‌هایی که باید پاییده
+شوند، و آنچه هنوز نامعلوم بود.
+
+جلسه‌ی بعد اول همین را می‌خواند. پس اتاق می‌داند چه پولی و ساعت چه کسی از قبل
+خرج شده، و یک سؤال عمیق را دو بار از شما نمی‌پرسد.
+
+وقتی تاریخ بازبینی رسید، حالت `followup` دفتر را پس می‌خواند: چه پیش‌بینی
+کردیم، چه شد، کدام محرک شلیک شد، و از آن تصمیم چه چیزی هنوز بدهکاریم.
+
+---
+
+## صفحه‌ی مدیر
+
+کسی که باید کار را انجام دهد، معمولاً در جلسه نبوده است. پس شورا در پنجره‌ی
+چت تمام نمی‌شود.
+
+هر شورا و هر بررسی ایده یک فایل HTML مستقل هم می‌نویسد. مدیر آن را روی گوشی
+باز می‌کند، پرینت می‌گیرد، یا همان‌طور ایمیل می‌کند. بدون سرور، بدون ورود به
+حساب، بدون فایل دوم.
+
+صفحه به ترتیبی جواب می‌دهد که مدیر می‌پرسد:
+
+۱. **چه چیزهایی را بررسی کردید؟** هر گزینه‌ای که روی میز آمد، با حکم و دلیل.
+   گزینه‌ای که بحث نشد، همین را می‌نویسد و ناپدید نمی‌شود.
+۲. **چه تصمیمی گرفتید؟**
+۳. **چرا؟** دو یا سه دلیل، هرکدام با عددش.
+۴. **کجای کار گیر است؟** هر مانع با اینکه چه چیزی را می‌خواباند، چه کسی
+   برمی‌دارد، تا کی، و اگر برداشته نشود چه می‌شود.
+۵. **کی چه کاری تا کِی؟**
+۶. **چه چیزی را هنوز نمی‌دانیم**، و دانستنش چقدر خرج دارد؟
+
+بعد ماتریس SWOT، سه سناریو با محرک هرکدام، و متن کامل جلسه که روی هر رقمش
+برچسب منبع نشسته. بالای صفحه هم جلسه را می‌شمارد: چند گزینه بررسی شد، چند
+نوبت صحبت، و چند عدد مشاهده‌شده در برابر چند فرض.
+
+روی گوشی، جدول‌ها به کارت‌های برچسب‌دار تبدیل می‌شوند تا هیچ ستونی بیرون از
+صفحه نماند.
+
+صفحه از روی
+[`templates/meeting-page.html`](plugins/shora/skills/shora/templates/meeting-page.html)
+ساخته می‌شود و کنار کار شما در `meetings/<تاریخ>-<موضوع>.html` ذخیره می‌شود.
+
+**فونت.** صفحه اول سراغ فونت پیدا می‌رود و اگر نبود Vazirmatn را از گوگل‌فونتس
+می‌گیرد. پیدا فونت تجاری fontiran.com است، پس این مخزن هیچ فایل فونتی ندارد.
+اگر سازمان شما لایسنس پیدا دارد، بلوک‌های `@font-face` خودتان را بین دو نشانه‌ی
+`PEYDA-FONT-START` و `PEYDA-FONT-END` در قالب بگذارید تا صفحه یک فایل مستقل
+بماند. هر فونت فارسی دیگری هم به همین شکل کار می‌کند.
+
+**نمونه‌ها:**
+[جلسه‌ی کامل فارسی](plugins/shora/skills/shora/examples/meeting-fa.md) ·
+[بررسی ایده به انگلیسی](plugins/shora/skills/shora/examples/idea-review-en.md) ·
+[همان جلسه به‌شکل صفحه‌ی مدیر](plugins/shora/skills/shora/examples/meeting-fa.html)
+(فایل را دانلود کنید و در مرورگر باز کنید)
+
+---
+
+## نصب
+
+### روش اول: افزونه‌ی Claude Code (پیشنهاد می‌شود)
 
 ```
-/plugin marketplace add mahdifooladvand/nine-roles
+/plugin marketplace add mahdifooladvand/shora
 ```
 
 ```
-/plugin install nine-roles@nine-roles
+/plugin install shora@shora
 ```
 
-### Claude Code, by copying the folder
+### روش دوم: کپی‌کردن پوشه
 
-Copy the skill folder from this repo into your skills folder:
+پوشه‌ی مهارت را در پوشه‌ی مهارت‌های خودتان بگذارید:
 
-- macOS / Linux: `~/.claude/skills/nine-roles`
-- Windows: `C:\Users\<you>\.claude\skills\nine-roles`
+- ویندوز: `C:\Users\<نام شما>\.claude\skills\shora`
+- مک و لینوکس: `~/.claude/skills/shora`
 
 ```bash
-git clone https://github.com/mahdifooladvand/nine-roles.git
-cp -r nine-roles/plugins/nine-roles/skills/nine-roles ~/.claude/skills/
+git clone https://github.com/mahdifooladvand/shora.git
+cp -r shora/plugins/shora/skills/shora ~/.claude/skills/
 ```
 
-For one project only, put it in `.claude/skills/nine-roles` inside that
-project.
+برای یک پروژه‌ی مشخص، همان پوشه را در `.claude/skills/shora` داخل خود
+پروژه بگذارید.
 
-### Claude.ai or the API
+### روش سوم: claude.ai یا API
 
-Upload the contents of `plugins/nine-roles/skills/nine-roles/` as a skill, or paste
-`plugins/nine-roles/skills/nine-roles/SKILL.md` into a Project's instructions and attach the
-`references/` files.
+محتوای `plugins/shora/skills/shora/` را به‌عنوان یک مهارت بارگذاری
+کنید، یا متن `SKILL.md` را در دستورهای یک Project بگذارید و فایل‌های
+`references/` را ضمیمه کنید.
 
 ---
 
-## Make it fit your organization
+## اندازه‌ی سازمان خودتان کنید
 
-Once, write a short profile and keep it in the folder you work in. The council
-reads it before every meeting and stops giving generic advice.
+یک بار یک پروفایل کوتاه بنویسید و کنار کارتان نگه دارید. شورا پیش از هر جلسه
+آن را می‌خواند و از توصیه‌ی عمومی دست برمی‌دارد.
 
-Copy [`templates/org-profile.md`](plugins/nine-roles/skills/nine-roles/templates/org-profile.md)
-to `nine-roles.md` in your working folder, and fill in what you know: sector,
-size, the team and what each person is actually good at, the real constraints,
-and the numbers you genuinely have.
+فایل
+[`templates/org-profile.md`](plugins/shora/skills/shora/templates/org-profile.md)
+را در پوشه‌ی کارتان با نام `shora.md` کپی کنید و آنچه می‌دانید پر کنید:
+صنعت، اندازه، تیم و اینکه هر نفر در چه چیزی خوب است، محدودیت‌های واقعی، و
+عددهایی که واقعاً دارید.
 
-Leave blanks rather than guessing. A blank becomes `[NO DATA]`, and `[NO DATA]`
-is information. A guess becomes a number somebody quotes back at you in six
-months.
+جای خالی بگذارید، حدس ننویسید. جای خالی می‌شود `[بدون داده]` و خودش اطلاعات
+است. حدس می‌شود عددی که شش ماه بعد به خودتان برمی‌گردد.
 
 ---
 
-## What is inside
+## داخل مخزن چه هست
 
 ```
-plugins/nine-roles/skills/nine-roles/
-  SKILL.md                  the engine: modes, rounds, house rules, red lines
+plugins/shora/skills/shora/
+  SKILL.md                  موتور: حالت‌ها، دورها، قواعد خانه، خط قرمزها
   references/
-    roles.md                the nine role cards, with veto powers
-    characters.md           who the nine are, and how each one talks
-    questions.md            ten families of question that change a decision
-    formats.md              ten meeting formats, seat by seat, with their stops
-    evidence.md             the arithmetic, and the rules that stop fake numbers
-    ledger.md               the decisions ledger and the follow-up loop
-    sectors.md              ten sectors: what to inspect, which number lies
-    persian.md              Persian names, tags and typography
-  templates/                the manager page, minutes, org profile, decisions
-                            ledger, idea review, three plans, inspection plan,
-                            role map
-  examples/                 one full Persian meeting (markdown and manager page),
-                            one English idea review
+    roles.md                نُه کارت نقش، با اختیار وتوی هرکدام
+    characters.md           شخصیت نُه نفر و طرز حرف‌زدنشان
+    questions.md            ده خانواده سؤال که تصمیم را عوض می‌کند
+    formats.md              ده قالب جلسه، صندلی به صندلی
+    evidence.md             حساب‌وکتاب، و قواعدی که جلوی عدد ساختگی را می‌گیرد
+    ledger.md               دفتر تصمیم‌ها و حلقه‌ی بازبینی
+    sectors.md              ده صنعت: چه چیزی را بازرسی کنیم، کدام عدد دروغ می‌گوید
+    persian.md              نام‌ها، برچسب‌ها و تایپوگرافی فارسی
+  templates/                صفحه‌ی مدیر، صورت‌جلسه، پروفایل سازمان، دفتر
+                            تصمیم‌ها، بررسی ایده، سه نقشه، نقشه‌ی بازرسی،
+                            نقشه‌ی نقش‌ها
+  examples/                 یک جلسه‌ی کامل فارسی (متن و صفحه‌ی مدیر)،
+                            یک بررسی ایده به انگلیسی
 ```
 
 ---
 
-## راهنمای فارسی
+## مشارکت
 
-راهنمای کامل فارسی، با همه‌ی بخش‌های این صفحه، اینجاست:
-**[README.fa.md](README.fa.md)**
+مفیدترین چیزی که می‌شود اضافه کرد، یادداشت صنعت است: کنترلر در صنعت شما دقیقاً
+چه چیزی را بازرسی می‌کند، و صنعت شما عادت دارد با کدام عدد به خودش دلخوشی
+بدهد. برای `references/sectors.md` یک pull request بفرستید.
 
-نصب سریع در Claude Code:
+## اعتبار
 
-```
-/plugin marketplace add mahdifooladvand/nine-roles
-```
+قواعد لحن که باعث می‌شود نُه نقش مثل آدم حرف بزنند از
+[stop-slop](https://github.com/hardikpandya/stop-slop) نوشته‌ی Hardik Pandya
+گرفته شده، با مجوز MIT.
 
-```
-/plugin install nine-roles@nine-roles
-```
+## مجوز
 
----
-
-## Contributing
-
-Sector notes are the most useful thing to add: what a controller in your
-industry actually inspects, and which number your industry habitually flatters
-itself with. Open a pull request against `references/sectors.md`.
-
-## Credits
-
-The voice rules that keep the nine roles sounding like people come from
-[stop-slop](https://github.com/hardikpandya/stop-slop) by Hardik Pandya, MIT.
-
-## License
-
-MIT. Use it inside your company, change it, ship it with your own product.
+MIT. داخل شرکت خودتان استفاده کنید، تغییرش بدهید، با محصول خودتان بفرستیدش.

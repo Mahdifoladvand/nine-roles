@@ -1,6 +1,6 @@
 # Organization profile
 
-Save as `nine-roles.md` or `.nine-roles/org.md` in the working folder. The
+Save as `shora.md` or `.shora/org.md` in the working folder. The
 council reads it before every meeting, so it stops giving generic advice.
 Fill what you know. Leave the rest blank rather than guessing.
 

@@ -1,15 +1,15 @@
 {
   "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
-  "name": "nine-roles",
-  "displayName": "Nine Roles",
+  "name": "shora",
+  "displayName": "Shora",
   "version": "1.0.0",
   "description": "A nine-role team council for any organization: run a full meeting and read the transcript, review an idea on market, technical and money, stress-test a plan with a dedicated critic, design quality checks, and assign the nine roles to real staff. Evidence-tagged, never invents numbers. Works in English and Persian.",
   "author": {
     "name": "Mahdi Foladvand",
     "url": "https://github.com/mahdifooladvand"
   },
-  "homepage": "https://github.com/mahdifooladvand/nine-roles",
-  "repository": "https://github.com/mahdifooladvand/nine-roles",
+  "homepage": "https://github.com/mahdifooladvand/shora",
+  "repository": "https://github.com/mahdifooladvand/shora",
   "license": "MIT",
   "keywords": ["meeting", "facilitation", "decision", "business", "team", "critical-thinking", "feasibility", "persian"]
 }
