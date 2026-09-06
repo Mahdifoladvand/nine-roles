@@ -145,12 +145,33 @@ would not change the decision.
 
 1. Print the transcript up to that point.
 2. The Coordinator names which role is stuck and why, in one line.
-3. Ask at most three questions, numbered, each answerable in one sentence. Say
-   a rough number is fine.
+3. Ask at most three questions, numbered, each answerable in one or two
+   sentences. Say a rough number is fine.
 4. Stop there. Wait. Do not continue the meeting in the same message, and never
    answer on the owner's behalf.
 
-At most two stops in one meeting.
+**One of the questions is never about a number.** A stop that only collects
+figures wastes the one person in the room who knows why this decision exists.
+Take the second question from `references/questions.md`: what the decision is
+actually for, what would make them stop, what they cannot take back, who loses
+if it works, what would change their mind.
+
+**Before you ask anything, write down what changes with each plausible answer.**
+If the meeting does the same thing whatever they say, cut the question. This is
+the difference between a deep question and a polite one.
+
+Two stops in one meeting, no more. The first collects the numbers the room is
+guessing at, plus one question about the decision itself. The second comes
+after the Analyst has finished, when the room is converging and the sharp
+question still has time to change the outcome.
+
+Never soften a deep question, never offer a menu of answers with it, and never
+fill the silence with an example. A question followed by three suggested
+answers stops being a question.
+
+When the answer comes back, the role who needed it says out loud what it
+changed. "Then the cash argument drops out and lock-up is the whole risk" is
+the sentence that proves the stop was worth making.
 
 When the answer arrives, resume from the round that was waiting and retag every
 figure it settles. `[ASSUMED]` becomes `[OBSERVED]`, and say out loud in the
@@ -352,7 +373,7 @@ unasked.
 If this session can publish a page to a link, offer that after the file is
 saved. Publish nothing without being asked.
 
-## Before you hand it over, check these ten
+## Before you hand it over, check these eleven
 
 1. Do the nine voices disagree somewhere? Nine agreeing voices mean one voice
    in nine hats.
@@ -360,14 +381,16 @@ saved. Publish nothing without being asked.
    sound different from the other eight?
 3. Did somebody say "I don't know", and did the Coordinator ask the owner for
    any number the owner actually holds?
-4. Does every number carry a producer tag?
-5. Does every action item carry a name and a date?
-6. Did the Critic name a number or a trigger instead of a feeling?
-7. Is there a physical action starting inside 48 hours?
-8. Does every option that reached the table carry a verdict and a reason,
+4. Did one question go past the numbers, and did the transcript show what the
+   answer changed? A stop that changed nothing should not have happened.
+5. Does every number carry a producer tag?
+6. Does every action item carry a name and a date?
+7. Did the Critic name a number or a trigger instead of a feeling?
+8. Is there a physical action starting inside 48 hours?
+9. Does every option that reached the table carry a verdict and a reason,
    including the ones nobody got to?
-9. Does every blocker carry a name and a date?
-10. For a `council` or an `idea`: does the manager page exist on disk with no
+10. Does every blocker carry a name and a date?
+11. For a `council` or an `idea`: does the manager page exist on disk with no
    placeholder left in it?
 
 Any "no" means the meeting is not finished. Fix it before printing.
@@ -378,6 +401,7 @@ Any "no" means the meeting is not finished. Fix it before printing.
 |---|---|
 | `references/roles.md` | Any council, idea review, or role assignment |
 | `references/characters.md` | Every transcript, for who these nine people are |
+| `references/questions.md` | Every time the Coordinator stops to ask the owner |
 | `references/formats.md` | Running any mode other than `council` |
 | `references/evidence.md` | The Analyst speaks, or any number appears |
 | `references/sectors.md` | You know the organization's sector |
