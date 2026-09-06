@@ -255,6 +255,11 @@ Sector notes are the most useful thing to add: what a controller in your
 industry actually inspects, and which number your industry habitually flatters
 itself with. Open a pull request against `references/sectors.md`.
 
+## Credits
+
+The voice rules that keep the nine roles sounding like people come from
+[stop-slop](https://github.com/hardikpandya/stop-slop) by Hardik Pandya, MIT.
+
 ## License
 
 MIT. Use it inside your company, change it, ship it with your own product.
