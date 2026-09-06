@@ -86,8 +86,8 @@ number, a law, a capacity, or a customer who does not exist. Write which.
 
 ## `premortem` - it already failed, why?
 
-**Use when** the plan is written and everybody is enthusiastic. That is the
-most dangerous moment a plan has.
+**Use when** the plan is written and everybody likes it. That is when it
+needs attacking.
 
 **Seats.** Critic (leads), Controller, Analyst.
 
@@ -138,9 +138,9 @@ a regulation, a landlord, a supplier, a single large customer.
 attached to watching it. "If things get bad" is not a trigger. "If the exchange
 rate closes above X for five working days" is a trigger.
 
-**Why this format exists.** Small and medium companies do not usually die of a
-bad decision. They die of a decision that was only correct at one value of one
-number nobody was watching.
+**Why this format exists.** A plan that works at today's exchange rate can stop
+working at next month's. Somebody has to watch that number, and the switch has
+to be written down before the number moves.
 
 ---
 
@@ -165,8 +165,8 @@ the field, in branches, in vehicles, in shifts, in other people's hands.
 **Ends when** every row has a number and a name, and the whole plan could be
 read aloud to the team it inspects without anybody being ambushed.
 
-**Hard rule.** If the check could not be announced to the people it checks, it
-is not a control, it is a trap. Redesign it.
+**Hard rule.** Announce the check to the people it checks. If you cannot,
+redesign it.
 
 ---
 
@@ -194,8 +194,7 @@ half, then proceed with what you have and mark the guesses.
 **Ends when** every one of the nine roles has either a name or a written
 admission that it is empty.
 
-**Rule.** An empty seat named is worth more than a seat filled by the wrong
-person to make the table look complete.
+**Rule.** Name the empty seat. Filling it with the wrong person hides the gap.
 
 ---
 
@@ -246,9 +245,9 @@ pretending to be someone else.
 
 **Output.** Four lines. That is the whole document.
 
-**Rule.** A lesson is written as a rule, not as an apology. "We were too
+**Rule.** Write the lesson as a rule. "We were too
 optimistic" is an apology. "No launch date is set before the supplier confirms
-in writing" is a rule. Only the second one changes anything.
+in writing" is a rule. The second one changes what you do next time.
 
 ---
 
@@ -262,7 +261,6 @@ The formats work the same when the nine roles are nine humans:
 - Nobody objects before the plan exists. Say this at the beginning, every time,
   until it stops needing saying.
 - One person writes the minutes during the meeting, not afterwards from memory.
-- The dissent goes in the minutes with the name of who held it. A meeting where
-  nobody disagreed is a meeting that decided nothing, or a meeting where
-  somebody was afraid.
+- The dissent goes in the minutes with the name of who held it. When nobody disagrees, either the meeting decided nothing or somebody stayed
+  quiet.
 - End on the owners table. Read it aloud before anyone stands up.

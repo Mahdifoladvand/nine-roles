@@ -120,8 +120,8 @@ If the sector is not listed, use the closest one and say which you used.
 
 ## Non-profit and public bodies
 
-- **Inspect.** What reached the intended person, not what was dispatched. The
-  gap between the two is the whole programme.
+- **Inspect.** What reached the intended person. The gap between dispatched and
+  received is what the programme delivered.
 - **The number that lies.** Money raised or budget spent. Neither is an outcome.
 - **The hidden cost.** Reporting burden, and the volunteer or staff time that
   never appears in the budget.
@@ -136,6 +136,5 @@ If the sector is not listed, use the closest one and say which you used.
 Controller inspects it first, and inspects it where it happens, not from a
 desk.
 
-**What number does this sector habitually flatter itself with?** Every industry
-has one. Find it, refuse it, and replace it with the number that survives a bad
-month.
+**Which number does this sector flatter itself with?** Find it, then replace it
+with a number that survives a bad month.

@@ -1,8 +1,8 @@
 # Evidence rules and the arithmetic
 
-This file is what stops a nine-role meeting from becoming nine confident voices
-inventing numbers. Read it whenever the Analyst speaks, or whenever any figure
-appears anywhere in the output.
+Nine confident voices can invent a lot of numbers. These rules stop that.
+Read this whenever the Analyst speaks, or whenever a figure appears anywhere in
+the output.
 
 ---
 
@@ -38,8 +38,8 @@ let a chart show an empty month as a zero.
 percentage on a small sample invents precision that the sample cannot carry.
 
 **No growth rate on a zero or missing base.** Write "first period, no
-comparison". Growth from one customer to three is not 200% growth, it is two
-extra customers.
+comparison". Going from one customer to three gives you two extra customers. Skip the
+percentage.
 
 **An average hides its distribution.** If the range matters - and for revenue,
 waiting time, order size and delivery time it always matters - give the range
@@ -49,8 +49,7 @@ or the median beside it.
 Any option that is argued on revenue alone gets sent back to the Analyst.
 
 **Intent is not purchase.** People who say they would buy are not customers.
-Count deposits, pre-orders, signed contracts, actual visits. Ask what the
-person did, not what they said they would do.
+Count deposits, pre-orders, signed contracts, actual visits. Ask what the person did.
 
 **Reach is not response.** Do not report how many people saw it. Report how
 many answered, and what that cost each.
@@ -81,8 +80,8 @@ Say it in units per day as well as per month, because a person can picture
 **Cash out before cash in**
 `days of stock + days until the customer pays - days until we pay the supplier`
 This number, in days, multiplied by daily spend, is the cash the plan needs
-before it earns anything. It is what kills small companies far more often than
-a bad margin does.
+before it earns anything. This closes more small companies than a thin margin
+does.
 
 **Payback**
 `money spent up front / monthly contribution`
@@ -107,15 +106,14 @@ platform's commission, a regulated price - give three columns, not one:
 | Break-even per day | | | |
 | Payback in months | | | |
 
-If the option only works in the middle column, that is not a plan, that is a
-bet. Say the word "bet" in the minutes, so the owner is choosing it knowingly.
+If the option only works in the middle column, write the word bet in the
+minutes, so the owner chooses it knowingly.
 
 ---
 
 ## 5. When there is no data - the cheapest measurement ladder
 
-Climb from the bottom. Most decisions are settled on the first two rungs, and
-most teams start on the fifth.
+Climb from the bottom. The first two rungs settle most decisions.
 
 1. **Look at what you already have.** Receipts, bookings, the complaints book,
    the CRM, the delivery log, last year's schedule. Most companies are sitting
@@ -132,8 +130,8 @@ most teams start on the fifth.
    only when you know which page you need.
 
 State the cost and the days for each rung you propose. "We could know this for
-about two days of one person's time" is a decision-grade sentence. "We should
-do more research" is not.
+about two days of one person's time". Somebody can decide on that sentence.
+"We should do more research" leaves them where they were.
 
 ---
 
@@ -171,6 +169,4 @@ supplier, a landlord, a regulator, a platform. How long their agreement takes.
 **Money.** The five lines in section 3, plus the sensitivity table when an
 uncontrolled price is involved.
 
-Then one sentence, always: **"This works only if ___ is true."** That blank is
-what the Critic attacks, and it is the most useful sentence in the whole
-meeting.
+Then one sentence, always: **"This works only if ___ is true."** The Critic attacks that blank.

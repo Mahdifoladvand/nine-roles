@@ -77,21 +77,22 @@ This matters more than the feature list.
 
 From a real run - a confectionery with 14 staff, deciding on a second branch:
 
-> **Analyst:** Contribution per order: 240,000 × 42% ≈ 101,000 `[ASSUMED - using
-> last year's cost of goods; this year it is lower]`. Fixed cost per month:
-> rent 28 + four salaries 96 + energy 15 ≈ 139M `[ASSUMED]`. Break-even:
-> 139M ÷ 101,000 ≈ **46 orders a day**. The current branch does about 129 a day
-> `[OBSERVED]`. The decisive number - daily orders in the new neighbourhood -
-> is `[NO DATA]`.
+> **Spotter:** Hold on. At the start you said you send boxes to two offices on
+> Thursdays. So you already have a delivery route and corporate customers, and
+> nobody has counted them.
 >
-> **Critic:** I disagree with the Analyst before I disagree with the
-> arithmetic. That 42% margin is last year's flour and oil price. At 35% the
-> break-even jumps to 55 orders a day. The number the whole decision rests on
-> is itself an assumption.
+> **Analyst:** I worked out the second branch. Rent 28, four salaries 96,
+> energy and supplies 15. That's 139M a month `[ASSUMED]`. Divide by the
+> 101,000 each order leaves you and it needs 1,376 orders a month. **46 a
+> day.** The current branch does 129 `[OBSERVED]`. Daily orders in the new
+> neighbourhood: nobody knows `[NO DATA]`.
 >
-> **Closer:** From tomorrow morning the cashier asks each customer which
-> neighbourhood they came from and writes it in the sales book. Owner: Ms
-> Rezaei, starting Saturday. Cost: zero, ten seconds per sale.
+> **Critic:** That 42% margin is last year's flour and oil. At 35% the
+> break-even goes to 55 a day. So the number this whole decision sits on is
+> itself an assumption.
+>
+> **Closer:** Saturday morning the cashier starts asking which neighbourhood
+> people came from. Ms Rezaei. Costs nothing, ten seconds a sale.
 
 Decision: not this year, measure for three weeks first - because the number the
 whole decision rests on costs nothing to find out, and 770M is locked up if it
@@ -102,11 +103,25 @@ is wrong.
 The person who has to act on a meeting is usually not the person who ran it, so
 a council does not end in a chat window.
 
-Every council and idea review also writes one self-contained HTML file: the
-decision at the top, the owners and dates under it, the recorded dissent and the
-priced unknowns beside each other, and the full transcript below, where every
-figure carries its evidence tag. A manager opens it on a phone, prints it to
-PDF, or emails it as it is. No server, no login, no other file needed.
+Every council and idea review also writes one self-contained HTML file. A
+manager opens it on a phone, prints it to PDF, or emails it as it is. No
+server, no login, no other file needed.
+
+The page answers the questions a manager asks in order:
+
+1. **What did you look at?** Every option that reached the table, with a
+   verdict and a reason. Options nobody discussed say so, instead of
+   disappearing.
+2. **What did you decide?**
+3. **Why?** Two or three reasons, each carrying its number.
+4. **What is in the way?** Each blocker with what it stops, who clears it, by
+   when, and what happens if nobody does.
+5. **Who does what, by when?**
+6. **What do we still not know**, and what does finding out cost?
+
+Then the full transcript, where every figure carries its evidence tag. The
+header counts the meeting: options examined, speaking turns, and how many
+numbers were measured against how many were assumed.
 
 The page is built from
 [`templates/meeting-page.html`](plugins/nine-roles/skills/nine-roles/templates/meeting-page.html)

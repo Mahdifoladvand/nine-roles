@@ -70,6 +70,17 @@ td.when,td.num{font-family:var(--mono);font-variant-numeric:tabular-nums;white-s
 .tag.assumed{color:var(--assumed);border:1px dashed var(--assumed)}
 .tag.nodata{color:var(--nodata);border:1px dotted var(--nodata);text-decoration:line-through;
   text-decoration-thickness:1px}
+.reasons{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:.35rem;
+  font-size:.93rem}
+.reasons li{padding-inline-start:1rem;position:relative}
+.reasons li::before{content:"";position:absolute;inset-inline-start:0;top:.7em;width:.4rem;
+  height:.4rem;border-radius:50%;background:var(--accent)}
+.mark{font-family:var(--mono);font-size:.72rem;padding:.08em .5em;border-radius:4px;
+  white-space:nowrap;display:inline-block}
+.mark.yes{color:var(--observed);border:1px solid var(--observed);background:var(--accent-soft)}
+.mark.no{color:var(--muted);border:1px solid var(--line);background:var(--raise)}
+.mark.park{color:var(--assumed);border:1px dashed var(--assumed)}
+.mark.skip{color:var(--muted);border:1px dotted var(--muted)}
 .turn{display:grid;grid-template-columns:1fr;gap:.35rem;padding:1rem 0;
   border-bottom:1px solid var(--line)}
 .turn:last-child{border-bottom:none}
@@ -104,6 +115,9 @@ a{color:var(--accent)}
       <span>{{DATE}}</span>
       <span>{{MODE}}</span>
       <span>{{SEATS_PRESENT}}</span>
+      <span>{{COUNT_OPTIONS}}</span>
+      <span>{{COUNT_TURNS}}</span>
+      <span>{{COUNT_TAGS}}</span>
     </div>
   </header>
 
@@ -111,7 +125,27 @@ a{color:var(--accent)}
     <h2>{{L_DECISION}}</h2>
     <p class="verdict">{{DECISION}}</p>
     <p class="because">{{BECAUSE}}</p>
+    <ul class="reasons">
+      <li>{{REASON_1}}</li>
+      <li>{{REASON_2}}</li>
+    </ul>
   </div>
+
+  <section>
+    <h2>{{L_EXAMINED}}</h2>
+    <div class="tablewrap">
+      <table>
+        <thead><tr>
+          <th>#</th><th>{{L_OPTION}}</th><th>{{L_VERDICT}}</th><th>{{L_WHY}}</th>
+        </tr></thead>
+        <tbody>
+          <tr><td class="num">1</td><td>{{OPTION_1}}</td>
+            <td><span class="mark yes">{{VERDICT_1}}</span></td><td>{{WHY_1}}</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="note">{{EXAMINED_NOTE}}</p>
+  </section>
 
   <section>
     <h2>{{L_ACTIONS}}</h2>
@@ -127,6 +161,21 @@ a{color:var(--accent)}
       </table>
     </div>
     <p class="note">{{FIRST_48H}}</p>
+  </section>
+
+  <section>
+    <h2>{{L_BLOCKERS}}</h2>
+    <div class="tablewrap">
+      <table>
+        <thead><tr>
+          <th>{{L_BLOCKER}}</th><th>{{L_STOPS}}</th><th>{{L_CLEARS}}</th><th>{{L_BY}}</th><th>{{L_IF_NOT}}</th>
+        </tr></thead>
+        <tbody>
+          <tr><td>{{BLOCKER_1}}</td><td>{{STOPS_1}}</td><td class="who">{{CLEARS_1}}</td>
+            <td class="when">{{CLEAR_BY_1}}</td><td>{{IF_NOT_1}}</td></tr>
+        </tbody>
+      </table>
+    </div>
   </section>
 
   <div class="pair">

@@ -4,13 +4,32 @@
 **Date:** <date>  **Mode:** council | triage | idea | premortem | scenarios | control | assign | intel | retro
 **Seats present:** <roles played, and who covered an empty seat>
 **Seats empty:** <roles nobody played today>
+**Scale:** <N options examined, M analysed with numbers, K speaking turns>
+
+## What we examined
+
+Every option that reached the table. Options nobody discussed get the verdict
+"not discussed" and go to the next agenda.
+
+| # | Option | Verdict | Reason |
+|---|---|---|---|
+| 1 | | chosen / rejected / held / not discussed | |
+| 2 | | | |
 
 ## Decision
 
-<One sentence. What was decided, in the words the owner would use.>
+<One sentence, in the words the owner would use.>
 
-Chosen because: <the number, law, capacity or customer that decided it>
-Rejected: <options not taken, one line each with the reason>
+Reasons:
+
+1. <reason, with the number or the rule behind it>
+2. <reason>
+
+## Blockers to clear
+
+| Blocker | What it stops | Who clears it | By | If nobody clears it |
+|---|---|---|---|---|
+| | | | | |
 
 ## Owners and dates
 
