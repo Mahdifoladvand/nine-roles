@@ -43,6 +43,11 @@ not consultants on a stage. Write speech, not prose.
 Banned openers: "Here's the thing", "Let me be clear", "The truth is",
 «راستش را بخواهید», «باید عرض کنم».
 
+Nine people, nine ways of talking. Nadia throws options and drops them. Marta
+reads numbers off her paper. Rick asks who and by when. The cards are in
+`references/characters.md`, and personality belongs in what somebody notices,
+not in jokes bolted onto the end of a line.
+
 Before you print a transcript, read two turns aloud. If nobody you know talks
 like that, write them again.
 
@@ -122,6 +127,53 @@ Cross-talk is required. In rounds 5 to 8, two roles address each other by name
 and disagree. "You priced that at last year's rates" is a meeting. Nine
 monologues are not a meeting.
 
+## Stop and ask the owner
+
+Halfway through, the room needs a number that sits in the owner's head or in
+their till. Guessing at it wastes the meeting.
+
+The Coordinator stops the table and asks the human. Nobody else talks to them.
+
+**Stop when** the number decides the outcome, and the owner can answer from
+memory or in about two minutes.
+
+**Do not stop when** the answer needs research, a supplier call, or a report.
+That belongs in the Advisor's information plan. Do not stop for anything that
+would not change the decision.
+
+**How to do it.**
+
+1. Print the transcript up to that point.
+2. The Coordinator names which role is stuck and why, in one line.
+3. Ask at most three questions, numbered, each answerable in one sentence. Say
+   a rough number is fine.
+4. Stop there. Wait. Do not continue the meeting in the same message, and never
+   answer on the owner's behalf.
+
+At most two stops in one meeting.
+
+When the answer arrives, resume from the round that was waiting and retag every
+figure it settles. `[ASSUMED]` becomes `[OBSERVED]`, and say out loud in the
+transcript that it moved.
+
+"I don't know" is an answer. Tag it `[NO DATA]`, hand it to the Advisor for the
+information plan, and carry on. Never ask the same thing twice.
+
+Format:
+
+```
+**شیرین (هماهنگ‌کننده):** یک لحظه نگه می‌دارم. مریم بدون این دو عدد جلو نمی‌رود.
+
+> **از شما می‌پرسم**
+> ۱. الان روزی چند سفارش می‌زنید؟
+> ۲. اجاره‌ی آن ملک ماهی چند است؟
+>
+> عدد تقریبی هم کافی است. اگر نمی‌دانید بگویید، جلسه با فرض ادامه می‌دهد.
+```
+
+The manager page records the question and the answer where the meeting stopped,
+so a reader sees which numbers came from the owner in the room.
+
 ## House rules
 
 **Every number carries a producer.** Tag each figure `[OBSERVED]` when the user
@@ -183,16 +235,20 @@ job.
 Print the transcript in the chat. The user wants to watch the meeting.
 
 ```
-**هماهنگ‌کننده:** ...
-**ایده‌پرداز:** ...
+**شیرین (هماهنگ‌کننده):** ...
+**نگار (ایده‌پرداز):** ...
 ```
+
+Name and role on every turn. The cast lives in `references/characters.md`. Use
+the real names of staff when the organization profile says who plays what, and
+keep the same names for the same company across meetings.
 
 Speaker label in bold, then the lines. Keep each turn inside the length in the
 round table. Compact by default, around two screens for a full council. When
 the user says "long" or «مفصل», double every round.
 
 Then print the minutes from `templates/minutes.md`. A reader who missed the
-meeting has to see six things, and all six go in:
+meeting has to see eight things, and all eight go in:
 
 1. **What we examined.** Every option that reached the table, with a verdict
    and one line of reason. Options nobody discussed get the verdict "not
@@ -200,10 +256,46 @@ meeting has to see six things, and all six go in:
 2. **What we decided.**
 3. **Why.** Two or three reasons, each carrying the number or the rule behind
    it.
-4. **What blocks it.** Each blocker with what it stops, who clears it, by when,
+4. **Where we stand.** The SWOT for the option that won.
+5. **Three scenarios**, each with the trigger that switches us onto it.
+6. **What blocks it.** Each blocker with what it stops, who clears it, by when,
    and what happens if nobody does.
-5. **Who does what by when**, plus the dissent somebody put on the record.
-6. **What we still do not know**, and what finding out costs.
+7. **Who does what by when**, plus the dissent somebody put on the record.
+8. **What we still do not know**, and what finding out costs.
+
+### The SWOT
+
+Built from what the roles said in this meeting, never from a template of
+business words.
+
+- **Strengths and weaknesses** come from the Analyst. Internal only: what this
+  company owns and lacks today. "The kitchen runs at half capacity before noon"
+  is a strength. "Strong brand" is not, unless somebody measured it.
+- **Opportunities** come from the Ideator and the Advisor. External, and
+  reachable inside a year.
+- **Threats** come from the Critic. Each one names the actor: a competitor, a
+  landlord, a regulator, a supplier, a price.
+
+Two to four items per cell, tagged like every other figure. An empty cell says
+"nothing found". Padding a quadrant with filler destroys the reader's ability
+to tell which quadrant is real.
+
+### The three scenarios
+
+From the Critic's round. Each card carries what happens, the trigger, what we
+do, and the number somebody watches.
+
+- **Pessimistic.** The cost you do not control moves against you, or the
+  permission is refused. Name what survives and what gets cut first. If a
+  rejected option would have failed here, say how, so the owner sees what the
+  meeting saved.
+- **Realistic.** The world continues as it is. This one usually has no trigger,
+  because it is the default path.
+- **Optimistic.** The constraint lifts. Name what has to be ready in advance to
+  move fast.
+
+A trigger is an event somebody could observe: "two weeks of invoices above the
+ceiling", not "if things get bad".
 
 ## The manager view, always produce it
 
@@ -260,19 +352,22 @@ unasked.
 If this session can publish a page to a link, offer that after the file is
 saved. Publish nothing without being asked.
 
-## Before you hand it over, check these nine
+## Before you hand it over, check these ten
 
 1. Do the nine voices disagree somewhere? Nine agreeing voices mean one voice
    in nine hats.
-2. Read two turns aloud. Does anybody talk like that?
-3. Does every number carry a producer tag?
-4. Does every action item carry a name and a date?
-5. Did the Critic name a number or a trigger instead of a feeling?
-6. Is there a physical action starting inside 48 hours?
-7. Does every option that reached the table carry a verdict and a reason,
+2. Read two turns aloud. Does anybody talk like that? Does each of the nine
+   sound different from the other eight?
+3. Did somebody say "I don't know", and did the Coordinator ask the owner for
+   any number the owner actually holds?
+4. Does every number carry a producer tag?
+5. Does every action item carry a name and a date?
+6. Did the Critic name a number or a trigger instead of a feeling?
+7. Is there a physical action starting inside 48 hours?
+8. Does every option that reached the table carry a verdict and a reason,
    including the ones nobody got to?
-8. Does every blocker carry a name and a date?
-9. For a `council` or an `idea`: does the manager page exist on disk with no
+9. Does every blocker carry a name and a date?
+10. For a `council` or an `idea`: does the manager page exist on disk with no
    placeholder left in it?
 
 Any "no" means the meeting is not finished. Fix it before printing.
@@ -282,6 +377,7 @@ Any "no" means the meeting is not finished. Fix it before printing.
 | File | Read it when |
 |---|---|
 | `references/roles.md` | Any council, idea review, or role assignment |
+| `references/characters.md` | Every transcript, for who these nine people are |
 | `references/formats.md` | Running any mode other than `council` |
 | `references/evidence.md` | The Analyst speaks, or any number appears |
 | `references/sectors.md` | You know the organization's sector |

@@ -25,6 +25,24 @@ Reasons:
 1. <reason, with the number or the rule behind it>
 2. <reason>
 
+## SWOT for the option that won
+
+Every cell comes from this meeting. Tag the numbers. An empty cell says
+"nothing found" instead of filler.
+
+| | Internal | External |
+|---|---|---|
+| **Helps** | Strengths: <what we own today> | Opportunities: <reachable within a year> |
+| **Hurts** | Weaknesses: <what we lack today> | Threats: <name the actor> |
+
+## Three scenarios
+
+| | What happens | Trigger | What we do | Number we watch |
+|---|---|---|---|---|
+| Pessimistic | | | | |
+| Realistic | | (default path) | | |
+| Optimistic | | | | |
+
 ## Blockers to clear
 
 | Blocker | What it stops | Who clears it | By | If nobody clears it |
