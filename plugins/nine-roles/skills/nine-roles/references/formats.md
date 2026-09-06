@@ -5,7 +5,30 @@ and the condition that ends it. When the user does not name a format, run
 `council`.
 
 Every format obeys the house rules in `SKILL.md`: numbers carry producer tags,
-the Critic speaks after a plan exists, no action item without a name and a date.
+the Critic speaks after a plan exists, no action item without a name and a
+date, and the meeting halts at every stop and waits for the owner in a separate
+message.
+
+## Stops, per format
+
+A stop is a hard break. The message ends at the question and the next message
+starts with the owner's answer. A format with no stop says so here, so a reader
+can tell a decision from an omission.
+
+| Format | Stops | Where |
+|---|---|---|
+| `council` | 2 | After round 4 and after round 5, per the table in `SKILL.md` |
+| `idea` | 1 | After the Advisor, before the Analyst prices anything |
+| `triage` | 1, only if the decisive number is unknown | After the Analyst names it |
+| `premortem` | 1 | After the first failure list, to ask what the owner has seen fail before |
+| `scenarios` | 1 | Before writing the triggers, to ask what would make the owner switch |
+| `control` | 1 | Before setting thresholds, to ask what the owner would call unacceptable |
+| `intel` | 1 | To ask which unknown the owner would pay to close first |
+| `assign` | 0 | Names and skills came in with the request |
+| `retro` | 0 | The facts are in the ledger and the owner is telling the story |
+| `followup` | 1 | After reading the ledger, to ask what actually happened |
+
+One of the questions at any stop is never about a number.
 
 ---
 
@@ -70,10 +93,13 @@ applauded.
 2. Spotter: what is genuinely new in it, and what is a rewording of what we
    already do.
 3. Advisor: what we would need to know, where that lives, what it costs.
-4. Analyst: market, technical, money. Every number tagged. The decisive number
+4. **STOP.** The Coordinator holds the meeting. Ask the owner the figures the
+   Analyst is about to assume, plus one question from `references/questions.md`.
+   The message ends here. Wait.
+5. Analyst: market, technical, money. Every number tagged. The decisive number
    named.
-5. Critic: the failure, the trigger, and the number at which this is wrong.
-6. Closer: go, no-go, or go-if - with the condition and the date.
+6. Critic: the failure, the trigger, and the number at which this is wrong.
+7. Closer: go, no-go, or go-if - with the condition and the date.
 
 **Output.** `templates/idea-review.md`.
 
@@ -250,6 +276,38 @@ optimistic" is an apology. "No launch date is set before the supplier confirms
 in writing" is a rule. The second one changes what you do next time.
 
 ---
+
+## `followup` - what happened to the last decision
+
+**Use when** a review date has arrived, or the owner asks what became of an
+earlier decision, or a new meeting is about to spend money the last one already
+committed.
+
+**Seats.** Coordinator, Controller, Critic, Closer.
+
+**Input.** The ledger at `./decisions.md`, or the meeting pages under
+`./meetings/`. Read `references/ledger.md` first. With no ledger, say so in one
+line and offer to start one from this meeting forward.
+
+**Rounds.**
+1. Coordinator: which decision, taken when, and what it promised.
+2. Controller: what we predicted against what happened, side by side, with the
+   numbers that exist and `[NO DATA]` where the measurement never ran.
+3. **STOP.** Ask the owner what actually happened, in their words, and one
+   question from family 9 of `references/questions.md`. The message ends here.
+4. Critic: which of our triggers fired and nobody acted on it.
+5. Closer: what we still owe from that decision, with names and dates.
+6. Coordinator: what carries forward, what is closed, and what capacity is now
+   free again.
+
+**Output.** An updated ledger entry, plus the four-line retro if the decision is
+finished.
+
+**Ends when** every open action from the earlier decision is either done,
+reassigned with a new date, or killed on the record.
+
+**Rule.** A promise nobody checked is the reason people stop believing meetings.
+This format exists to check them.
 
 ## Running this with real people in a real room
 

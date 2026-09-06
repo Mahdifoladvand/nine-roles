@@ -142,6 +142,19 @@ td.when,td.num{font-family:var(--mono);font-variant-numeric:tabular-nums;white-s
 .foot{font-size:.8rem;color:var(--muted);border-top:1px solid var(--line);padding-top:1rem;
   display:flex;flex-wrap:wrap;gap:.4rem 1.2rem;justify-content:space-between}
 a{color:var(--accent)}
+@media(max-width:46rem){
+  .tablewrap{overflow-x:visible;border:none;background:none;border-radius:0}
+  table,table[style]{min-width:0;width:100%}
+  thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+  tbody,tr,td{display:block;width:auto}
+  tr{border:1px solid var(--line);border-radius:var(--radius);background:var(--surface);
+    padding:.35rem .2rem;margin-bottom:.7rem}
+  td{border-bottom:none;padding:.3rem .8rem}
+  td:empty{display:none}
+  td::before{content:attr(data-label);display:block;font-family:var(--mono);font-size:.62rem;
+    letter-spacing:.07em;text-transform:uppercase;color:var(--muted);margin-bottom:.1rem}
+  td[data-label=""]::before{display:none}
+}
 @media print{
   :root{--ground:#fff;--surface:#fff;--raise:#fff;--ink:#000;--muted:#3a3a3a;--line:#bbb;
     --accent:#000;--accent-soft:#fff}
@@ -162,7 +175,7 @@ a{color:var(--accent)}
       <span>حالت: شورای کامل</span>
       <span>۹ نقش، ۱ صندلی پوشش‌داده‌شده</span>
       <span>۸ گزینه بررسی شد، ۴ تای آن با عدد</span>
-      <span>۱۳ نوبت صحبت</span>
+      <span>۱۴ نوبت صحبت</span>
       <span>۲ توقف برای پرسیدن از مالک</span>
       <span>نمونه، شرکت واقعی نیست</span>
     </div>
@@ -174,7 +187,8 @@ a{color:var(--accent)}
     <p class="because">ملک فقط تا آخر ماه نگه داشته می‌شود، پس سه هفته اندازه‌گیری دیر است. جلسه پنجره را کوتاه کرد و تصمیم شعبه را گذاشت روی روز دهم.</p>
     <ul class="reasons">
       <li>سربه‌سر شعبه‌ی دوم روزی ۴۶ سفارش است. سفارش روزانه‌ی محله‌ی هدف را کسی نشمرده.</li>
-      <li>مالک وسط جلسه گفت روزی ده دوازده نفر از صف ساعت شش می‌روند. سالی حدود ۴۰۰۰ سفارش که همین حالا از دست می‌رود.</li>
+      <li>مالک وسط جلسه گفت ده تا دوازده نفر از صف ساعت شش می‌روند. با عدد پایین، سالی ۳۶۵۰ سفارش و حدود ۳۷۰ میلیون تومان سود مشارکتی <span class="tag assumed">فرض</span> که همین حالا از در بیرون می‌رود.</li>
+      <li>جز آن ۷۷۰ میلیون، حدود ۳۲۴ میلیون تومان دیگر لازم است تا اولین فروش شعبه برسد <span class="tag assumed">فرض</span>. این پول هنوز جایی دیده نشده.</li>
       <li>تحویل و سفارش آنلاین سرمایه‌ی نزدیک صفر می‌خواهند و اگر جواب ندهند یک هفته‌ای بسته می‌شوند.</li>
       <li>عدد توقف روی میز آمد: ماه سوم زیر روزی ۴۶ سفارش، جمع می‌کنیم. مالک و نقاد سر همین عدد توافق کردند.</li>
     </ul>
@@ -186,14 +200,14 @@ a{color:var(--accent)}
       <table>
         <thead><tr><th>#</th><th>گزینه</th><th>حکم</th><th>دلیل</th></tr></thead>
         <tbody>
-          <tr><td class="num">۱</td><td>تحویل از آشپزخانه‌ی فعلی به سه محله‌ی اطراف</td><td><span class="mark yes">انتخاب شد</span></td><td>سربه‌سر روزی چهار سفارش، سرمایه تقریباً صفر، خاموش‌کردنش یک هفته است</td></tr>
-          <tr><td class="num">۲</td><td>فروش شرکتی، جعبه‌ی پذیرایی پنجشنبه‌ها</td><td><span class="mark yes">انتخاب شد</span></td><td>مسیر و مشتری‌اش از قبل هست و کسی تا امروز نشمرده بود</td></tr>
-          <tr><td class="num">۳</td><td>سفارش آنلاین با تحویل حضوری</td><td><span class="mark yes">انتخاب شد</span></td><td>مالک گفت روزی ۱۱ نفر از صف می‌روند، یعنی سالی حدود ۴۰۰۰ سفارش</td></tr>
-          <tr><td class="num">۴</td><td>کیوسک دو متری در یک فروشگاه شلوغ</td><td><span class="mark park">نگه داشته شد</span></td><td>اگر ملک برود، جایگزین گزینه‌ی شعبه می‌شود</td></tr>
-          <tr><td class="num">۵</td><td>تولید صبحگاهی برای یک کافه، با برند خودشان</td><td><span class="mark park">نگه داشته شد</span></td><td>ساعت خالی صبح را پر می‌کند. تا قیمت تمام‌شده معلوم نشود حاشیه‌اش محاسبه نمی‌شود</td></tr>
-          <tr><td class="num">۶</td><td>شعبه‌ی دوم کامل</td><td><span class="mark no">تعویق تا روز دهم</span></td><td>سربه‌سر روزی ۴۶ سفارش، عدد محله بدون داده، و ۷۷۰ میلیون قفل می‌شود</td></tr>
-          <tr><td class="num">۷</td><td>اجاره‌ی نصف‌روز آشپزخانه</td><td><span class="mark skip">بحث نشد</span></td><td>وقت جلسه تمام شد. به دستور جلسه‌ی بعد می‌رود</td></tr>
-          <tr><td class="num">۸</td><td>کلاس شیرینی‌پزی شب‌ها</td><td><span class="mark skip">بحث نشد</span></td><td>وقت جلسه تمام شد. به دستور جلسه‌ی بعد می‌رود</td></tr>
+          <tr><td class="num" data-label="#">۱</td><td data-label="گزینه">تحویل از آشپزخانه‌ی فعلی به سه محله‌ی اطراف</td><td data-label="حکم"><span class="mark yes">انتخاب شد</span></td><td data-label="دلیل">سربه‌سر روزی چهار سفارش، سرمایه تقریباً صفر، خاموش‌کردنش یک هفته است</td></tr>
+          <tr><td class="num" data-label="#">۲</td><td data-label="گزینه">فروش شرکتی، جعبه‌ی پذیرایی پنجشنبه‌ها</td><td data-label="حکم"><span class="mark yes">انتخاب شد</span></td><td data-label="دلیل">مسیر و مشتری‌اش از قبل هست و کسی تا امروز نشمرده بود</td></tr>
+          <tr><td class="num" data-label="#">۳</td><td data-label="گزینه">سفارش آنلاین با تحویل حضوری</td><td data-label="حکم"><span class="mark yes">انتخاب شد</span></td><td data-label="دلیل">مالک گفت روزی ده تا دوازده نفر از صف می‌روند، سالی ۳۶۵۰ تا ۴۴۰۰ سفارش</td></tr>
+          <tr><td class="num" data-label="#">۴</td><td data-label="گزینه">کیوسک دو متری در یک فروشگاه شلوغ</td><td data-label="حکم"><span class="mark park">نگه داشته شد</span></td><td data-label="دلیل">اگر ملک برود، جایگزین گزینه‌ی شعبه می‌شود</td></tr>
+          <tr><td class="num" data-label="#">۵</td><td data-label="گزینه">تولید صبحگاهی برای یک کافه، با برند خودشان</td><td data-label="حکم"><span class="mark park">نگه داشته شد</span></td><td data-label="دلیل">ساعت خالی صبح را پر می‌کند. تا قیمت تمام‌شده معلوم نشود حاشیه‌اش محاسبه نمی‌شود</td></tr>
+          <tr><td class="num" data-label="#">۶</td><td data-label="گزینه">شعبه‌ی دوم کامل</td><td data-label="حکم"><span class="mark no">تعویق تا روز دهم</span></td><td data-label="دلیل">سربه‌سر روزی ۴۶ سفارش، عدد محله بدون داده، و ۷۷۰ میلیون قفل می‌شود</td></tr>
+          <tr><td class="num" data-label="#">۷</td><td data-label="گزینه">اجاره‌ی نصف‌روز آشپزخانه</td><td data-label="حکم"><span class="mark skip">بحث نشد</span></td><td data-label="دلیل">وقت جلسه تمام شد. به دستور جلسه‌ی بعد می‌رود</td></tr>
+          <tr><td class="num" data-label="#">۸</td><td data-label="گزینه">کلاس شیرینی‌پزی شب‌ها</td><td data-label="حکم"><span class="mark skip">بحث نشد</span></td><td data-label="دلیل">وقت جلسه تمام شد. به دستور جلسه‌ی بعد می‌رود</td></tr>
         </tbody>
       </table>
     </div>
@@ -223,7 +237,7 @@ a{color:var(--accent)}
       <div class="quad o">
         <h3>فرصت <span>بیرونی</span></h3>
         <ul>
-          <li>روزی ۱۱ نفر از صف می‌روند، سالی حدود ۴۰۰۰ سفارش <span class="tag observed">مشاهده‌شده</span></li>
+          <li>روزی ده تا دوازده نفر از صف می‌روند <span class="tag observed">مشاهده‌شده، برآورد مالک</span></li>
           <li>دفترهای اطراف، سفارش پذیرایی پنجشنبه <span class="tag assumed">فرض</span></li>
           <li>کافه‌های محل که خودشان تولید ندارند <span class="tag assumed">فرض</span></li>
         </ul>
@@ -251,7 +265,7 @@ a{color:var(--accent)}
           <dt>کار ما</dt><dd>شعبه منتفی. قیمت منو یک بار بازبینی می‌شود. تحویل ادامه دارد، چون هزینه‌ی ثابتش صفر است</dd>
           <dt>عددی که می‌خوانیم</dt><dd>قیمت کیلوی آرد، هر خرید</dd>
           <dt>عدد توقف</dt><dd>ماه سوم، زیر روزی ۴۶ سفارش. مالک خودش ۴۰ گفت، بهرام ۴۶ را گرفت</dd>
-          <dt>بدون بالشتک</dt><dd>۷۷۰ میلیون تنها ذخیره است. اگر آرد گران شود و شعبه سربه‌سر نشده باشد، پشتوانه‌ای نیست</dd>
+          <dt>بدون بالشتک</dt><dd>۷۷۰ میلیون تنها ذخیره است، و ۳۲۴ میلیون نقد راه‌اندازی هنوز جایی دیده نشده. اگر آرد گران شود و شعبه سربه‌سر نشده باشد، پشتوانه‌ای نیست</dd>
         </dl>
       </div>
       <div class="card mid">
@@ -261,7 +275,7 @@ a{color:var(--accent)}
           <dt>محرک</dt><dd>هیچ. مسیر پیش‌فرض همین است</dd>
           <dt>کار ما</dt><dd>سه ماه اندازه‌گیری. شعبه فقط با عدد، نه با حس</dd>
           <dt>عددی که می‌خوانیم</dt><dd>سفارش روزانه‌ی تحویل، و سهم محله‌ی اول</dd>
-          <dt>سود مشارکتی هدف</dt><dd>سالی حدود ۴۰۰ میلیون تومان از صف ساعت شش <span class="tag observed">مشاهده‌شده</span></dd>
+          <dt>سود مشارکتی هدف</dt><dd>سالی حدود ۳۷۰ میلیون تومان از صف ساعت شش <span class="tag assumed">فرض</span>، چون سهم هر سفارش هنوز فرض است</dd>
         </dl>
       </div>
       <div class="card good">
@@ -284,11 +298,11 @@ a{color:var(--accent)}
       <table>
         <thead><tr><th>#</th><th>اقدام</th><th>مسئول</th><th>تا</th><th>انجام‌شده یعنی</th></tr></thead>
         <tbody>
-          <tr><td class="num">۱</td><td>ثبت نام محله‌ی هر مشتری در صندوق</td><td class="who">خانم رضایی</td><td class="when">شنبه، شروع</td><td>دفتر هر روز پر شده</td></tr>
-          <tr><td class="num">۲</td><td>قیمت تمام‌شده‌ی امسال از فاکتورهای سه ماه اخیر</td><td class="who">آقای کاظمی</td><td class="when">پنج‌شنبه</td><td>یک عدد با فاکتور پشتش</td></tr>
-          <tr><td class="num">۳</td><td>اولین خواندن دفتر محله و تصمیم ملک</td><td class="who">مالک و سمیرا</td><td class="when">روز دهم</td><td>سهم محله‌ی اول روی کاغذ</td></tr>
-          <tr><td class="num">۴</td><td>راه‌اندازی سفارش آنلاین برای صف ساعت شش</td><td class="who">مسئول فروش</td><td class="when">این هفته</td><td>ده سفارش آزمایشی گرفته شده</td></tr>
-          <tr><td class="num">۵</td><td>فهرست دفترهایی که پنجشنبه‌ها سفارش داده‌اند</td><td class="who">مسئول فروش</td><td class="when">یک هفته</td><td>فهرست با شماره تماس</td></tr>
+          <tr><td class="num" data-label="#">۱</td><td data-label="اقدام">ثبت نام محله‌ی هر مشتری در صندوق</td><td class="who" data-label="مسئول">خانم رضایی</td><td class="when" data-label="تا">شنبه، شروع</td><td data-label="انجام‌شده یعنی">دفتر هر روز پر شده</td></tr>
+          <tr><td class="num" data-label="#">۲</td><td data-label="اقدام">قیمت تمام‌شده‌ی امسال از فاکتورهای سه ماه اخیر</td><td class="who" data-label="مسئول">آقای کاظمی</td><td class="when" data-label="تا">پنج‌شنبه</td><td data-label="انجام‌شده یعنی">یک عدد با فاکتور پشتش</td></tr>
+          <tr><td class="num" data-label="#">۳</td><td data-label="اقدام">اولین خواندن دفتر محله و تصمیم ملک</td><td class="who" data-label="مسئول">مالک و سمیرا</td><td class="when" data-label="تا">روز دهم</td><td data-label="انجام‌شده یعنی">سهم محله‌ی اول روی کاغذ</td></tr>
+          <tr><td class="num" data-label="#">۴</td><td data-label="اقدام">راه‌اندازی سفارش آنلاین برای صف ساعت شش</td><td class="who" data-label="مسئول">مسئول فروش</td><td class="when" data-label="تا">این هفته</td><td data-label="انجام‌شده یعنی">ده سفارش آزمایشی گرفته شده</td></tr>
+          <tr><td class="num" data-label="#">۵</td><td data-label="اقدام">فهرست دفترهایی که پنجشنبه‌ها سفارش داده‌اند</td><td class="who" data-label="مسئول">مسئول فروش</td><td class="when" data-label="تا">یک هفته</td><td data-label="انجام‌شده یعنی">فهرست با شماره تماس</td></tr>
         </tbody>
       </table>
     </div>
@@ -301,10 +315,11 @@ a{color:var(--accent)}
       <table>
         <thead><tr><th>مانع</th><th>چه چیزی را می‌خواباند</th><th>چه کسی برمی‌دارد</th><th>تا</th><th>اگر برداشته نشود</th></tr></thead>
         <tbody>
-          <tr><td>ملک فقط تا آخر ماه نگه داشته می‌شود</td><td>پنجره‌ی تصمیم شعبه</td><td class="who">مالک</td><td class="when">روز دهم</td><td>ملک می‌رود و کیوسک جایش بررسی می‌شود</td></tr>
-          <tr><td>قیمت تمام‌شده‌ی امسال معلوم نیست</td><td>همه‌ی حاشیه‌ها و نقطه‌ی سربه‌سر</td><td class="who">آقای کاظمی</td><td class="when">پنج‌شنبه</td><td>هیچ عدد مالی این جلسه معتبر نمی‌ماند</td></tr>
-          <tr><td>آدرس مشتری در صندوق ثبت نمی‌شود</td><td>انتخاب محل شعبه</td><td class="who">خانم رضایی</td><td class="when">از شنبه، هر روز</td><td>تصمیم شعبه به حدس می‌افتد</td></tr>
-          <tr><td>ساعت شش یک نفر هم صندوق است هم تحویل</td><td>شروع سفارش آنلاین</td><td class="who">مسئول فروش</td><td class="when">پیش از اولین تحویل</td><td>اولین سفارش‌ها دیر می‌رسند و صف بدتر می‌شود</td></tr>
+          <tr><td data-label="مانع">ملک فقط تا آخر ماه نگه داشته می‌شود</td><td data-label="چه چیزی را می‌خواباند">پنجره‌ی تصمیم شعبه</td><td class="who" data-label="چه کسی برمی‌دارد">مالک</td><td class="when" data-label="تا">روز دهم</td><td data-label="اگر برداشته نشود">ملک می‌رود و کیوسک جایش بررسی می‌شود</td></tr>
+          <tr><td data-label="مانع">حدود ۳۲۴ میلیون نقدِ راه‌اندازی جایی دیده نشده</td><td data-label="چه چیزی را می‌خواباند">هر تصمیمی درباره‌ی شعبه</td><td class="who" data-label="چه کسی برمی‌دارد">مالک</td><td class="when" data-label="تا">روز دهم</td><td data-label="اگر برداشته نشود">شعبه با ۷۷۰ میلیون باز می‌شود و ماه سوم پول تمام می‌کند</td></tr>
+          <tr><td data-label="مانع">قیمت تمام‌شده‌ی امسال معلوم نیست</td><td data-label="چه چیزی را می‌خواباند">همه‌ی حاشیه‌ها و نقطه‌ی سربه‌سر</td><td class="who" data-label="چه کسی برمی‌دارد">آقای کاظمی</td><td class="when" data-label="تا">پنج‌شنبه</td><td data-label="اگر برداشته نشود">هیچ عدد مالی این جلسه معتبر نمی‌ماند</td></tr>
+          <tr><td data-label="مانع">آدرس مشتری در صندوق ثبت نمی‌شود</td><td data-label="چه چیزی را می‌خواباند">انتخاب محل شعبه</td><td class="who" data-label="چه کسی برمی‌دارد">خانم رضایی</td><td class="when" data-label="تا">از شنبه، هر روز</td><td data-label="اگر برداشته نشود">تصمیم شعبه به حدس می‌افتد</td></tr>
+          <tr><td data-label="مانع">ساعت شش یک نفر هم صندوق است هم تحویل</td><td data-label="چه چیزی را می‌خواباند">شروع سفارش آنلاین</td><td class="who" data-label="چه کسی برمی‌دارد">مسئول فروش</td><td class="when" data-label="تا">پیش از اولین تحویل</td><td data-label="اگر برداشته نشود">اولین سفارش‌ها دیر می‌رسند و صف بدتر می‌شود</td></tr>
         </tbody>
       </table>
     </div>
@@ -317,8 +332,8 @@ a{color:var(--accent)}
         <table style="min-width:19rem">
           <thead><tr><th>کی</th><th>مخالف با چه</th><th>محرکی که او را محق می‌کند</th></tr></thead>
           <tbody>
-            <tr><td class="who">نگار (ایده‌پرداز)</td><td>ده روز صبر برای ملک</td><td>ملک پیش از روز دهم اجاره برود</td></tr>
-            <tr><td class="who">بهرام (نقاد)</td><td>عدد توقفِ ۴۰ که مالک گفت</td><td>ماه سوم بین ۴۰ و ۴۶ بماند و شش ماه ضرر پنهان بدهد</td></tr>
+            <tr><td class="who" data-label="کی">نگار (ایده‌پرداز)</td><td data-label="مخالف با چه">ده روز صبر برای ملک</td><td data-label="محرکی که او را محق می‌کند">ملک پیش از روز دهم اجاره برود</td></tr>
+            <tr><td class="who" data-label="کی">بهرام (نقاد)</td><td data-label="مخالف با چه">عدد توقفِ ۴۰ که مالک گفت</td><td data-label="محرکی که او را محق می‌کند">ماه سوم بین ۴۰ و ۴۶ بماند و شش ماه ضرر پنهان بدهد</td></tr>
           </tbody>
         </table>
       </div>
@@ -330,9 +345,9 @@ a{color:var(--accent)}
         <table style="min-width:19rem">
           <thead><tr><th>مجهول</th><th>چطور بفهمیم</th><th>هزینه</th><th>روز</th></tr></thead>
           <tbody>
-            <tr><td>محله‌ی مشتری‌های فعلی</td><td>ثبت در صندوق</td><td class="num">صفر</td><td class="num">۱۰</td></tr>
-            <tr><td>قیمت تمام‌شده‌ی امسال</td><td>جمع فاکتورهای خرید</td><td class="num">نصف روز کار</td><td class="num">۴</td></tr>
-            <tr><td>رقیبی که تحویل دارد یا نه</td><td>یک دور تلفن به پنج قنادی محل</td><td class="num">صفر</td><td class="num">۱</td></tr>
+            <tr><td data-label="مجهول">محله‌ی مشتری‌های فعلی</td><td data-label="چطور بفهمیم">ثبت در صندوق</td><td class="num" data-label="هزینه">صفر</td><td class="num" data-label="روز">۱۰</td></tr>
+            <tr><td data-label="مجهول">قیمت تمام‌شده‌ی امسال</td><td data-label="چطور بفهمیم">جمع فاکتورهای خرید</td><td class="num" data-label="هزینه">نصف روز کار</td><td class="num" data-label="روز">۴</td></tr>
+            <tr><td data-label="مجهول">رقیبی که تحویل دارد یا نه</td><td data-label="چطور بفهمیم">یک دور تلفن به پنج قنادی محل</td><td class="num" data-label="هزینه">صفر</td><td class="num" data-label="روز">۱</td></tr>
           </tbody>
         </table>
       </div>
@@ -398,7 +413,9 @@ a{color:var(--accent)}
         <p>شعبه‌ی دوم: اجاره ۲۸، حقوق چهار نفر ۹۶، انرژی و اقلام ۱۵. ماهی ۱۳۹ میلیون <span class="tag assumed">فرض</span>. تقسیم بر ۱۰۱ هزار می‌شود ماهی ۱۳۷۶ سفارش. <b>روزی ۴۶ تا.</b> شعبه‌ی فعلی روزی ۱۲۹ تا دارد <span class="tag observed">مشاهده‌شده</span>.</p>
         <p>پول اول کار ۴۵۰ رهن <span class="tag observed">مشاهده‌شده</span> و ۳۲۰ تجهیز <span class="tag assumed">فرض</span>. جمعش ۷۷۰. یعنی همه‌ی پول. تا اولین فروش هم دست‌کم ۷۰ روز حقوق و اجاره می‌دهیم بدون درآمد <span class="tag assumed">فرض</span>.</p>
         <p>عددی که همه‌چیز به آن بند است، سفارش روزانه در محله‌ی جدید است. نداریمش <span class="tag nodata">بدون داده</span>.</p>
-        <p>حالا آن صف. یازده نفر در روز <span class="tag observed">مشاهده‌شده</span> یعنی سالی حدود ۴۰۰۰ سفارش. با همان ۱۰۱ هزار تومان، سالی حدود ۴۰۰ میلیون تومان سود مشارکتی که همین امروز از در بیرون می‌رود. این عدد را ده دقیقه پیش نداشتیم.</p>
+        <p>حالا آن صف. مالک گفت ده تا دوازده نفر <span class="tag observed">مشاهده‌شده، برآورد مالک</span>. من عدد پایین را برمی‌دارم چون دارد برای خرج‌کردن استدلال می‌کند: ده نفر در روز، سالی ۳۶۵۰ سفارش. ضرب در ۱۰۱ هزار تومان می‌شود سالی حدود ۳۷۰ میلیون تومان <span class="tag assumed">فرض</span>. برچسبش فرض است نه مشاهده‌شده، چون آن ۱۰۱ هزار خودش فرض است. با سقف دوازده نفر می‌شود حدود ۴۴۰ میلیون.</p>
+        <p>دو خط دیگر هم بدهکارم. نقدی که تا اولین فروش بیرون می‌رود: ۱۳۹ میلیون در ماه تقسیم بر سی، ضرب در ۷۰ روز، می‌شود حدود <b>۳۲۴ میلیون تومان</b> <span class="tag assumed">فرض</span>. این جدای آن ۷۷۰ میلیون است و هنوز جایی دیده نشده.</p>
+        <p>بازگشت سرمایه: محاسبه نشد. تا سفارش روزانه‌ی محله <span class="tag nodata">بدون داده</span> باشد، هر عددی که بنویسم فرض است. خط را خالی نمی‌گذارم، می‌نویسم محاسبه نشد.</p>
         <p>تحویل از آشپزخانه: هزینه‌ی ثابت اضافه صفر تا ۱۲ میلیون در ماه <span class="tag assumed">فرض</span>، سربه‌سر روزی چهار سفارش. سرمایه تقریباً هیچ.</p>
       </div>
     </div>
@@ -455,6 +472,14 @@ a{color:var(--accent)}
         <p>اولین نشانه: سفارش روزانه‌ی هفته‌ی ششم زیر ۴۰. عددی که نقشه را غلط می‌کند: سفارش پایدار زیر ۴۶.</p>
         <p><b>سه نقشه.</b> واقع‌بینانه: تحویل و سفارش آنلاین از همین آشپزخانه، سه ماه، با اندازه‌گیری. خوش‌بینانه: اگر تا روز دهم بیش از ۳۵ درصد مشتری‌ها از یک محله بودند، ملک را همان هفته بگیرید. بدبینانه: اگر آرد ۳۰ درصد گران شد، شعبه منتفی است و قیمت منو یک بار بازبینی می‌شود.</p>
         <p>یک چیز را حذف کنید: تجهیز شعبه پیش از خواندن دفتر محله. و شیرین، من با شروع هم‌زمان تحویل و آنلاین مخالفم. یکی‌شان را یک هفته عقب بیندازید.</p>
+      </div>
+    </div>
+
+    <div class="turn">
+      <div class="role">مریم<span class="seat">تحلیل‌گر · بازمحاسبه</span></div>
+      <div class="says">
+        <p>بهرام یک عدد را کشت. با ۳۵ درصد، سهم هر سفارش می‌شود ۸۴ هزار تومان، پس آن ۳۷۰ میلیون فرصتِ صف می‌شود حدود ۳۰۷ میلیون، و سربه‌سر شعبه می‌رود روی ۵۵ سفارش در روز.</p>
+        <p>هر جای این صفحه که ۱۰۱ هزار تومان نوشته شده، با ستاره‌ی «قیمت تمام‌شده‌ی پارسال» می‌آید. پنج‌شنبه که عدد امسال برسد، همه‌ی این خط‌ها دوباره حساب می‌شوند.</p>
       </div>
     </div>
 

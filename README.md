@@ -47,6 +47,7 @@ meeting, not a job title.
 | "Here is my team, who should do what?" | The nine roles mapped to real people, plus the gaps |
 | "What do we not know?" | An information plan with costs and days |
 | "The campaign finished" | A four-line retro, written as rules |
+| "What happened to that decision?" | The ledger read back: predicted against actual, and what you still owe |
 
 ---
 
@@ -97,6 +98,33 @@ From a real run - a confectionery with 14 staff, deciding on a second branch:
 Decision: not this year, measure for three weeks first - because the number the
 whole decision rests on costs nothing to find out, and 770M is locked up if it
 is wrong.
+
+## The meeting stops and asks you
+
+Twice in a council, the meeting halts. The Coordinator asks you at most three
+questions and the message ends there. Nothing else is printed until you answer.
+
+One of those questions is never about a number. It asks what the decision is
+for, what would make you stop, what you cannot take back, or what would change
+your mind. The bank of them is in
+[references/questions.md](plugins/nine-roles/skills/nine-roles/references/questions.md),
+with a rule attached: before asking, the council writes down what changes with
+each plausible answer, and cuts the question if the answer changes nothing.
+
+Your answers retag figures from assumed to observed, and the transcript says
+what each answer changed.
+
+## It remembers the last decision
+
+Every council appends to `decisions.md` in your folder: the decision, the
+numbers it rested on with their tags, the owners, the triggers to watch, and
+what was still unknown. The next meeting reads it first, so the room knows what
+money and whose hours are already committed, and never asks you the same deep
+question twice.
+
+When a review date arrives, `followup` reads the ledger back: what we predicted
+against what happened, which trigger fired, and what you still owe from that
+decision.
 
 ## The manager page
 

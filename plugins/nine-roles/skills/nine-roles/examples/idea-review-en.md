@@ -34,7 +34,30 @@ with a person doing the work behind the screen, and count. One developer-week
 and about $300 of model usage `[ASSUMED]`. Fifteen days.
 The third unknown costs three phone calls: what did those customers mean.
 
-**Analyst.** Three axes.
+**Coordinator.** Stopping there. Marta is about to assume two numbers, and you
+hold one of them.
+
+> **We are asking you**
+> 1. What does a developer week actually cost you, loaded?
+> 2. If our numbers came back against this, would you still build it?
+>
+> A rough figure is fine. If you do not know, say so.
+>
+> **The meeting is paused here, waiting for you.**
+
+---
+
+*Message ends. The founder answered: "About $3,100 a week all in. And no, if
+the numbers say no I would rather ship the report and move on." Message two
+starts here.*
+
+---
+
+**Analyst.** Then $3,100 `[OBSERVED]` instead of my guess, and the build lands
+at $62k rather than $58k. The second answer matters more: this is a decision,
+not an approval, so the pilot result binds.
+
+Three axes.
 Market. Three of 240 accounts asked `[OBSERVED]`, and they hold 14% of revenue
 `[OBSERVED]`. The other 237 are `[NO DATA]`. Worth noticing: none of the three
 said they'd leave without it, and nobody asked them.
@@ -43,16 +66,16 @@ of them has shipped a feature that costs money every time somebody uses it
 `[ASSUMED, from your description of the team]`. That's the new step, and it's
 the one that generates support load.
 Money. Two developers for ten weeks `[ASSUMED]` is 20 developer-weeks, about
-$58k at $2,900 a week fully loaded `[ASSUMED]`. Price it at $80 a month, and
+$62k at $3,100 a week fully loaded `[OBSERVED]`. Price it at $80 a month, and
 suppose running cost lands at $25 per active account per month `[ASSUMED, and
-this is the number I trust least]`. Contribution is $55. Recovering $58k takes
-1,055 account-months, so 88 accounts subscribed for a year. That's 37 of every
-100 accounts you have.
-If running cost is $60 instead of $25, contribution drops to $20 and you'd need
-242 accounts. You have 240.
+this is the number I trust least]`. Contribution is $55 `[ASSUMED]`, because
+both numbers that produce it are assumptions. Recovering $62k takes 1,127
+account-months, so 94 accounts subscribed for a year. That is 94 of your 240.
+If running cost is $60 instead of $25, contribution drops to $20 and you would
+need 258 accounts. You have 240.
 The decisive number is running cost per active account per month, and it's
 `[NO DATA]`. Attach rate is second, also `[NO DATA]`.
-This works only if a third of your accounts switch it on and keep it on.
+This works only if 94 of your 240 accounts switch it on and keep it on.
 
 **Critic.** Analyst, I'll argue with the framing before the arithmetic. Three
 customers asked means three people said something on a call. Ask each of them
@@ -61,12 +84,12 @@ about what two of them described. A monthly summary is four days of work
 `[ASSUMED]`.
 The failure I'd bet on: you spend ten weeks, ship it, 14 accounts switch it on,
 six of them stop within a month, and running cost comes in above the price.
-The $58k isn't what hurts. You lose the quarter you could have spent on
+The $62k is not what hurts. You lose the quarter you could have spent on
 whatever those 310 tickets are about.
 Earliest signal: in a pilot, fewer than 12 of 20 invited accounts use it twice
 in the second week.
-Wrong at: running cost above $40 per active account at an $80 price, or attach
-under 20%.
+Wrong at: running cost above $40 per active account at an $80 price, or fewer
+than 4 of the 20 pilot accounts using it twice.
 Drop the word assistant. Build what two of the three described and find out
 whether anyone wants the rest.
 
@@ -85,10 +108,12 @@ Done means 20 accounts invited and usage counted daily.
 **Test first.**
 
 - **The test.** Three weeks, 20 accounts, manual behind the interface, about
-  $4k `[ASSUMED]`.
+  $4k `[ASSUMED]`. Between 4 and 12 of the 20 is the undecided band: it means
+  run three more weeks, not ship.
 - **Go if** at least 12 of the 20 use it twice in week two, and measured
   running cost stays under $30 per active account per month.
-- **No if** attach is under 20% of the pilot group, or running cost passes $40.
+- **No if** fewer than 4 of the 20 use it twice in week two, or running cost
+  passes $40.
 - **Either way**, ship the monthly summary report. Somebody asked for it, it
   takes four days `[ASSUMED]`, and it carries no variable cost.
 - **Review date.** Three weeks after the pilot starts, against two numbers:

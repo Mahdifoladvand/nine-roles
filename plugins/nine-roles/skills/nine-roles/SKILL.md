@@ -64,15 +64,20 @@ like that, write them again.
 | "who on my team should do what?" | `assign` | 2 | role map + named gaps |
 | "what do we not know?" | `intel` | 2 | information plan |
 | "that project is finished" | `retro` | 4 | two lessons written as rules |
+| "what happened to last month's decision?" / «آن تصمیم چه شد؟» | `followup` | 4 | the ledger read back: what we predicted, what happened, what we owe |
 
 Unclear? Run `council`. It contains the others.
 
 Seating charts, round orders and stop conditions: `references/formats.md`.
 
-## Intake, three questions, once
+## Intake, three questions, then two stops later
 
-Ask at most three questions in one message, then run the meeting. No second
-round of questions. Skip "shall I proceed?".
+Ask at most three intake questions in one message, then start the meeting. No
+second round of intake questions, and never "shall I proceed?".
+
+That ban covers intake only. The two stops in the round table below are not
+intake. They are mandatory, they land mid-transcript, and the meeting halts at
+each one.
 
 1. What decision has to come out of this meeting?
 2. What is the hard constraint: money, time, people, law?
@@ -85,6 +90,19 @@ Before the first meeting, look for an organization profile at `./nine-roles.md`
 or `./.nine-roles/org.md` and read it. If none exists and the user has run two
 meetings, offer once to write one from `templates/org-profile.md`. That file is
 what makes the council fit this company.
+
+**Then read the ledger.** `./decisions.md` holds what earlier meetings
+committed. Read it before round 1 and carry four things into the room, out loud:
+money and hours already promised over the next 90 days, any review date that has
+passed unchecked, any trigger that has already fired, and which deep questions
+the owner has already answered. Full protocol in `references/ledger.md`.
+
+A council that approves a fourth commitment while three are running is writing a
+wish. The Coordinator says the capacity envelope in round 1, or the Organizer
+says it in round 7. Somebody says it.
+
+If no ledger exists, run the meeting and offer once, at the end, to start one
+from `templates/decisions-ledger.md`.
 
 ## The nine roles
 
@@ -112,7 +130,7 @@ minute one and you kill ideas nobody has built yet.
 | Round | Speaker | Must contain | Length |
 |---|---|---|---|
 | 1 | Coordinator | The question, the decision owed, the constraint, what a good answer looks like | 4 lines |
-| 2 | Ideator | 5 to 8 options. Two of them use assets the company already owns. One costs almost nothing | 6 lines |
+| 2 | Ideator | Option zero is always "carry on as we are", priced like the rest. Then 5 to 8 more. Two use assets the company already owns, one costs almost nothing | 6 lines |
 | 3 | Spotter | 2 or 3 ideas hiding inside what was already said, credited to who said them | 3 lines |
 | 4 | Advisor | What we know, what we do not know, where the missing fact lives, what it costs to get | 4 lines |
 | **STOP 1** | **Coordinator asks the owner** | **The numbers the room is guessing at, plus one question about the decision itself. The message ends here.** | **wait** |
@@ -121,6 +139,7 @@ minute one and you kill ideas nobody has built yet.
 | 6 | Controller | How we see it working or breaking, what gets inspected, how often, by whom | 4 lines |
 | 7 | Organizer | Who does what, in what order, what runs in parallel, what blocks what | 4 lines |
 | 8 | Critic | The strongest option attacked at its weakest joint, then the three plans | 6 lines |
+| 8b | Analyst | Recompute whatever the Critic just broke. Name every figure that died and what replaces it | 2 lines |
 | 9 | Ideator | One rebuttal line | 1 line |
 | 10 | Closer | The first physical action inside 48 hours, and who makes the call | 3 lines |
 | 11 | Coordinator | The decision and its reasons, every option with why it was cut, the blockers, the owners table, the dissent, the review date | 6 lines |
@@ -203,13 +222,20 @@ information plan, and carry on. Never ask the same thing twice.
 Format:
 
 ```
-**شیرین (هماهنگ‌کننده):** یک لحظه نگه می‌دارم. مریم بدون این دو عدد جلو نمی‌رود.
+**شیرین (هماهنگ‌کننده):** یک لحظه نگه می‌دارم. مریم بدون این عدد جلو نمی‌رود،
+و یک چیز هم هست که فقط شما می‌دانید.
 
 > **از شما می‌پرسم**
 > ۱. الان روزی چند سفارش می‌زنید؟
-> ۲. اجاره‌ی آن ملک ماهی چند است؟
+> ۲. اگر امروز بگوییم نه، آن پول کجا می‌رود؟
 >
-> عدد تقریبی هم کافی است. اگر نمی‌دانید بگویید، جلسه با فرض ادامه می‌دهد.
+> عدد تقریبی کافی است. اگر نمی‌دانید، بگویید نمی‌دانم.
+>
+> **جلسه اینجا متوقف است. منتظر جواب شما.**
+
+Question one is the number. Question two comes from family 1 of
+`references/questions.md`. A stop with two number questions in it is a stop
+that wasted the only person who knows why this decision exists.
 ```
 
 The manager page records the question and the answer where the meeting stopped,
@@ -307,6 +333,35 @@ meeting has to see eight things, and all eight go in:
    and what happens if nobody does.
 7. **Who does what by when**, plus the dissent somebody put on the record.
 8. **What we still do not know**, and what finding out costs.
+9. **The numbers register.** Every figure the decision used, with its value, its
+   tag, and where it came from. `templates/minutes.md` carries the table. A
+   manager who wants to argue with the decision starts here.
+10. **The commitment test**, below, when the meeting chose more than one option.
+
+### The commitment test
+
+A council that approves three options has approved one plan, and nothing in a
+per-option analysis adds it up. Before the Critic speaks, the Organizer and the
+Analyst produce three totals for everything chosen together:
+
+- **Money leaving the business in the next 90 days**, for the whole set, tagged.
+- **Whose hours it costs**, by name, in the same week. If one person appears
+  twice in the same hour, the set is not executable and the Organizer says so.
+- **What is left if it all goes wrong**: the reserve after the worst case, in
+  money and in days.
+
+Then one sentence: can this company carry all of it at once, yes or no. A no
+sends one option back to "held", and the minutes record which one and why.
+
+### Option zero, always on the table
+
+"Carry on as we are" is an option and gets priced like the others. Without it
+the meeting compares three ways of spending money against each other and never
+against the cost of doing nothing.
+
+Every figure for a new option is incremental: what changes against option zero,
+not the gross total. If a new branch takes 20 orders a day from the branch you
+already have, those 20 are not growth.
 
 ### The SWOT
 
@@ -342,6 +397,21 @@ do, and the number somebody watches.
 A trigger is an event somebody could observe: "two weeks of invoices above the
 ceiling", not "if things get bad".
 
+## Write the decision into the ledger
+
+After the decision, append one entry to `./decisions.md` using
+`templates/decisions-ledger.md`. Append, never rewrite an earlier entry. A
+reversed decision gets a second block under the first, with the date and the
+reason.
+
+The entry carries the decision, its reasons with tags, the numbers register, the
+owners and dates, the blockers, the triggers with a watcher against each, what
+was still unknown, the capacity committed, the deep questions and their answers,
+the review date, and the path to the manager page.
+
+Two meetings later this file is the only thing standing between the company and
+deciding the same thing twice.
+
 ## The manager view, always produce it
 
 The person who has to act on a meeting usually missed it. A meeting that stays
@@ -366,6 +436,13 @@ How to fill it:
 - Wrap every evidence tag in its span: `<span class="tag observed">`,
   `tag assumed`, `tag nodata`. A manager scanning the page sees at a glance
   which numbers somebody measured.
+- Repeat every row and every block the meeting produced. One `<tr>` per option,
+  per action, per blocker, per unknown, per dissent. Two `.ask` blocks when the
+  meeting stopped twice. Two to four `<li>` per SWOT cell. A page with one row
+  in a table is a page that lost the meeting.
+- Tags belong in the tables too, not only in the SWOT. Any figure in the
+  decision block, the options table, the actions table or a scenario card
+  carries its `<span class="tag ...">`.
 - The examined table carries every option, including the ones nobody discussed.
   Use the verdict marks: `mark yes` for chosen, `mark no` for rejected,
   `mark park` for held for later, `mark skip` for not discussed.
@@ -397,27 +474,49 @@ unasked.
 If this session can publish a page to a link, offer that after the file is
 saved. Publish nothing without being asked.
 
-## Before you hand it over, check these twelve
+## Before you hand it over
 
-1. Do the nine voices disagree somewhere? Nine agreeing voices mean one voice
-   in nine hats.
-2. Read two turns aloud. Does anybody talk like that? Does each of the nine
+Seventeen checks in three groups. Run all three. Any "no" means the meeting is
+not finished.
+
+**The room.** Did it sound like people?
+
+1. Do the nine disagree somewhere? Nine agreeing voices are one voice in nine
+   hats.
+2. Read two turns aloud. Does anybody talk like that, and does each of the nine
    sound different from the other eight?
-3. Did somebody say "I don't know", and did the Coordinator ask the owner for
-   any number the owner actually holds?
-4. Did one question go past the numbers, and did the transcript show what the
-   answer changed? A stop that changed nothing should not have happened.
+3. Did somebody say "I don't know" out loud?
+4. Did the Coordinator stop and ask the owner, and did one question go past the
+   numbers?
 5. Did the message carrying each stop end at the stop, with nothing after it?
    Questions collected at the end of a finished meeting are decoration.
-6. Does every number carry a producer tag?
-7. Does every action item carry a name and a date?
-8. Did the Critic name a number or a trigger instead of a feeling?
-9. Is there a physical action starting inside 48 hours?
-10. Does every option that reached the table carry a verdict and a reason,
-   including the ones nobody got to?
-11. Does every blocker carry a name and a date?
-12. For a `council` or an `idea`: does the manager page exist on disk with no
-   placeholder left in it?
+6. Did the transcript say what each answer changed? A stop that changed nothing
+   should not have happened.
+
+**The numbers.** Can a manager argue with them?
+
+7. Does every number carry a producer tag?
+8. Does every figure that came out of a calculation carry the weakest tag of
+   the numbers that produced it?
+9. Did a remembered range stay a range instead of becoming a single figure?
+10. Was "carry on as we are" one of the options, and are the new options priced
+    against it instead of gross?
+11. After the Critic broke an input, did the Analyst recompute out loud, and
+    does the page carry the new figure instead of the dead one?
+12. Did the Critic name a number or a trigger instead of a feeling?
+13. When the meeting chose more than one option, did the commitment test run?
+
+**The artifacts.** Can somebody act on them tomorrow?
+
+14. Does every action item carry a name and a date, and is one of them starting
+    inside 48 hours?
+15. Does every option that reached the table carry a verdict and a reason,
+    including the ones nobody got to, and does every blocker carry a name and a
+    date?
+16. For a `council` or an `idea`: does the manager page exist on disk with no
+    placeholder left in it?
+17. Did you read the ledger before round 1, and append the decision to it
+    afterwards?
 
 Any "no" means the meeting is not finished. Fix it before printing.
 
@@ -428,6 +527,7 @@ Any "no" means the meeting is not finished. Fix it before printing.
 | `references/roles.md` | Any council, idea review, or role assignment |
 | `references/characters.md` | Every transcript, for who these nine people are |
 | `references/questions.md` | Every time the Coordinator stops to ask the owner |
+| `references/ledger.md` | Intake of every meeting, and all of `followup` |
 | `references/formats.md` | Running any mode other than `council` |
 | `references/evidence.md` | The Analyst speaks, or any number appears |
 | `references/sectors.md` | You know the organization's sector |

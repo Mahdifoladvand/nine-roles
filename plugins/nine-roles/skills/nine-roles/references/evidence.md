@@ -25,6 +25,26 @@ rates, industry benchmarks, survey results, academic studies, or case-study
 figures. If it was not supplied and not fetched, it is `[NO DATA]`, and the
 Advisor's job becomes "here is how we would find out, and what that costs".
 
+**A computed number carries the weakest tag of its inputs.** Multiply an
+`[OBSERVED]` count by an `[ASSUMED]` margin and the answer is `[ASSUMED]`.
+Arithmetic launders nothing. This is the most common way a guess reaches a
+manager wearing the clothes of a measurement.
+
+**A remembered range stays a range.** "Ten or twelve a day" is not eleven.
+Write "10 to 12 a day `[OBSERVED, owner's estimate]`" and carry both ends
+through the arithmetic. When the number is arguing for spending money, use the
+low end. An estimate spoken from memory is worth having and is not a count.
+
+**Tags cover claims, not only digits.** "The kitchen sits idle before noon",
+"the route already exists", "our competitor has no delivery" are claims about
+the company that decide things. Tag each one the same way. An untagged claim in
+a SWOT cell is the same defect as an untagged number in a table.
+
+**Retag downward the moment somebody breaks an input.** When the Critic proves
+the margin is last year's, every figure built on it drops a tag or dies. The
+Analyst names them out loud, before the page is written. A page that carries a
+figure the meeting already refuted is worse than a page with a gap.
+
 **A measured zero and a missing number are different facts.** Write "0 bookings
 in March `[OBSERVED]`" or write "March bookings `[NO DATA]` - the till was
 replaced and the old export was lost". Never draw them the same way, and never
@@ -87,6 +107,15 @@ does.
 `money spent up front / monthly contribution`
 In months. If the answer is longer than the lease, the licence, the equipment
 warranty or the season, say so in the same line.
+
+**None of these five may be skipped.** If the meeting could not compute one,
+the page carries the line with «محاسبه نشد» or "not computed" against it. A
+missing line reads as a line that did not matter.
+
+**Everything is measured against option zero.** Option zero is carrying on as
+we are. A new branch that takes 20 orders a day from the branch you already
+have did not add 20 orders. Report the incremental figure, and say what you
+assumed about cannibalization, tagged.
 
 **The decisive number**
 One number that the whole option hangs on. Name it. If it is `[NO DATA]`, the

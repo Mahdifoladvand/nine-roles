@@ -54,6 +54,8 @@ p{margin:0}
 .meta span{white-space:nowrap}
 .masthead{display:flex;flex-direction:column;gap:.6rem;padding-bottom:1.25rem;
   border-bottom:2px solid var(--ink)}
+.kicker{font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--accent)}
 .decision{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
   padding:1.25rem 1.35rem;display:flex;flex-direction:column;gap:.7rem;
   border-inline-start:5px solid var(--accent)}
@@ -139,6 +141,19 @@ td.when,td.num{font-family:var(--mono);font-variant-numeric:tabular-nums;white-s
 .foot{font-size:.8rem;color:var(--muted);border-top:1px solid var(--line);padding-top:1rem;
   display:flex;flex-wrap:wrap;gap:.4rem 1rem;justify-content:space-between}
 a{color:var(--accent)}
+@media(max-width:46rem){
+  .tablewrap{overflow-x:visible;border:none;background:none;border-radius:0}
+  table,table[style]{min-width:0;width:100%}
+  thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+  tbody,tr,td{display:block;width:auto}
+  tr{border:1px solid var(--line);border-radius:var(--radius);background:var(--surface);
+    padding:.35rem .2rem;margin-bottom:.7rem}
+  td{border-bottom:none;padding:.3rem .8rem}
+  td:empty{display:none}
+  td::before{content:attr(data-label);display:block;font-family:var(--mono);font-size:.62rem;
+    letter-spacing:.07em;text-transform:uppercase;color:var(--muted);margin-bottom:.1rem}
+  td[data-label=""]::before{display:none}
+}
 @media print{
   :root{--ground:#fff;--surface:#fff;--raise:#fff;--ink:#000;--muted:#444;--line:#bbb;
     --accent:#000;--accent-soft:#fff}
@@ -151,6 +166,7 @@ a{color:var(--accent)}
 <div class="page">
 
   <header class="masthead">
+    <p class="kicker">{{L_KICKER}}</p>
     <h1>{{TITLE}}</h1>
     <div class="meta">
       <span>{{ORG}}</span>
@@ -166,6 +182,7 @@ a{color:var(--accent)}
   <div class="decision">
     <h2>{{L_DECISION}}</h2>
     <p class="verdict">{{DECISION}}</p>
+    <p class="because">{{DECIDED_ON}} <span class="tag observed">{{L_TAG_OBSERVED}}</span></p>
     <p class="because">{{BECAUSE}}</p>
     <ul class="reasons">
       <li>{{REASON_1}}</li>
@@ -181,8 +198,8 @@ a{color:var(--accent)}
           <th>#</th><th>{{L_OPTION}}</th><th>{{L_VERDICT}}</th><th>{{L_WHY}}</th>
         </tr></thead>
         <tbody>
-          <tr><td class="num">1</td><td>{{OPTION_1}}</td>
-            <td><span class="mark yes">{{VERDICT_1}}</span></td><td>{{WHY_1}}</td></tr>
+          <tr><td class="num" data-label="#">1</td><td data-label="{{L_OPTION}}">{{OPTION_1}}</td>
+            <td data-label="{{L_VERDICT}}"><span class="mark yes">{{VERDICT_1}}</span></td><td data-label="{{L_WHY}}">{{WHY_1}}</td></tr>
         </tbody>
       </table>
     </div>
@@ -254,8 +271,8 @@ a{color:var(--accent)}
           <th>#</th><th>{{L_ACTION}}</th><th>{{L_OWNER}}</th><th>{{L_BY}}</th><th>{{L_DONE}}</th>
         </tr></thead>
         <tbody>
-          <tr><td class="num">1</td><td>{{ACTION_1}}</td><td class="who">{{OWNER_1}}</td>
-            <td class="when">{{BY_1}}</td><td>{{DONE_1}}</td></tr>
+          <tr><td class="num" data-label="#">1</td><td data-label="{{L_ACTION}}">{{ACTION_1}}</td><td class="who" data-label="{{L_OWNER}}">{{OWNER_1}}</td>
+            <td class="when" data-label="{{L_BY}}">{{BY_1}}</td><td data-label="{{L_DONE}}">{{DONE_1}}</td></tr>
         </tbody>
       </table>
     </div>
@@ -270,8 +287,8 @@ a{color:var(--accent)}
           <th>{{L_BLOCKER}}</th><th>{{L_STOPS}}</th><th>{{L_CLEARS}}</th><th>{{L_BY}}</th><th>{{L_IF_NOT}}</th>
         </tr></thead>
         <tbody>
-          <tr><td>{{BLOCKER_1}}</td><td>{{STOPS_1}}</td><td class="who">{{CLEARS_1}}</td>
-            <td class="when">{{CLEAR_BY_1}}</td><td>{{IF_NOT_1}}</td></tr>
+          <tr><td data-label="{{L_BLOCKER}}">{{BLOCKER_1}}</td><td data-label="{{L_STOPS}}">{{STOPS_1}}</td><td class="who" data-label="{{L_CLEARS}}">{{CLEARS_1}}</td>
+            <td class="when" data-label="{{L_BY}}">{{CLEAR_BY_1}}</td><td data-label="{{L_IF_NOT}}">{{IF_NOT_1}}</td></tr>
         </tbody>
       </table>
     </div>
@@ -284,8 +301,8 @@ a{color:var(--accent)}
         <table style="min-width:20rem">
           <thead><tr><th>{{L_WHO}}</th><th>{{L_OBJECTION}}</th><th>{{L_TRIGGER}}</th></tr></thead>
           <tbody>
-            <tr><td class="who">{{DISSENT_WHO_1}}</td><td>{{DISSENT_WHAT_1}}</td>
-              <td>{{DISSENT_TRIGGER_1}}</td></tr>
+            <tr><td class="who" data-label="{{L_WHO}}">{{DISSENT_WHO_1}}</td><td data-label="{{L_OBJECTION}}">{{DISSENT_WHAT_1}}</td>
+              <td data-label="{{L_TRIGGER}}">{{DISSENT_TRIGGER_1}}</td></tr>
           </tbody>
         </table>
       </div>
@@ -297,8 +314,8 @@ a{color:var(--accent)}
         <table style="min-width:20rem">
           <thead><tr><th>{{L_UNKNOWN}}</th><th>{{L_HOW}}</th><th>{{L_COST}}</th><th>{{L_DAYS}}</th></tr></thead>
           <tbody>
-            <tr><td>{{UNKNOWN_1}}</td><td>{{HOW_1}}</td><td class="num">{{COST_1}}</td>
-              <td class="num">{{DAYS_1}}</td></tr>
+            <tr><td data-label="{{L_UNKNOWN}}">{{UNKNOWN_1}}</td><td data-label="{{L_HOW}}">{{HOW_1}}</td><td class="num" data-label="{{L_COST}}">{{COST_1}}</td>
+              <td class="num" data-label="{{L_DAYS}}">{{DAYS_1}}</td></tr>
           </tbody>
         </table>
       </div>
@@ -326,12 +343,25 @@ a{color:var(--accent)}
       <div class="says">
         <p>{{SAYS_2}}</p>
         <div class="ask">
-          <h3>{{L_ASKED}}</h3>
+          <h3>{{L_ASKED}} 1</h3>
           <ol><li>{{ASK_1}}</li><li>{{ASK_2}}</li></ol>
-          <p class="answer"><b>{{L_OWNER}}:</b> {{ANSWER}}</p>
+          <p class="answer"><b>{{L_OWNER}}:</b> {{ANSWER_1}}</p>
           <p class="paused">{{L_PAUSED}}</p>
         </div>
         <p>{{SAYS_2_AFTER}}</p>
+      </div>
+    </div>
+
+    <div class="turn">
+      <div class="role">{{ROLE_3_NAME}}<span class="seat">{{ROLE_3}}</span></div>
+      <div class="says">
+        <p>{{SAYS_3}}</p>
+        <div class="ask">
+          <h3>{{L_ASKED}} 2</h3>
+          <ol><li>{{ASK_3}}</li><li>{{ASK_4}}</li></ol>
+          <p class="answer"><b>{{L_OWNER}}:</b> {{ANSWER_2}}</p>
+          <p class="paused">{{L_PAUSED}}</p>
+        </div>
       </div>
     </div>
 
@@ -339,6 +369,7 @@ a{color:var(--accent)}
 
   <footer class="foot">
     <span>{{L_REVIEW}}: {{REVIEW_DATE}}</span>
+    <span>{{L_ROLES_NOTE}}</span>
     <span>{{SEATS_EMPTY}}</span>
   </footer>
 
