@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>شورا</title>
+<meta name="description" content="شورا: تیم تصمیم‌گیری مدیریتی برای Claude. نُه نقش یک جلسه‌ی واقعی برگزار می‌کنند، وسط جلسه از شما می‌پرسند، و یک تصمیم با مسئول و تاریخ تحویل می‌دهند. عدد نمی‌سازد.">
+<meta property="og:title" content="شورا، تیم تصمیم‌گیری مدیریتی">
+<meta property="og:description" content="نُه نقش، یک میز، یک تصمیم. برای هر کسب‌وکاری. عدد نمی‌سازد.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  --ground:#F1F4F2; --surface:#FFFFFF; --raise:#E9EEEB;
+  --ink:#0F1A16; --muted:#5B6A65; --line:#D6DEDA;
+  --accent:#0B5B4F; --accent-soft:#E2EFEB; --assumed:#8A5A00; --nodata:#5B6A65;
+  --radius:12px;
+  --sans:"Peyda","Vazirmatn",Tahoma,"Segoe UI",system-ui,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Consolas,"Peyda",Tahoma,monospace;
+}
+@media (prefers-color-scheme:dark){
+  :root{
+    --ground:#0D1412; --surface:#131E1A; --raise:#182722;
+    --ink:#E4EDE9; --muted:#93A39D; --line:#25332E;
+    --accent:#6FD3BE; --accent-soft:#17302B; --assumed:#E0A94A; --nodata:#93A39D;
+  }
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--sans);line-height:1.8;
+  -webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.page{max-width:44rem;margin:0 auto;padding:clamp(1.2rem,4vw,3rem) clamp(1rem,4vw,2rem) 5rem;
+  display:flex;flex-direction:column;gap:2.4rem}
+.top{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;
+  font-family:var(--mono);font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.top a{text-decoration:none}
+h1{margin:0;font-size:clamp(2rem,7vw,3rem);font-weight:700;line-height:1.2;text-wrap:balance}
+h2{margin:0;font-size:1.15rem;font-weight:700;line-height:1.4}
+p{margin:0}
+.lead{font-size:1.1rem;max-width:36rem}
+.lead b{color:var(--accent)}
+.hero{display:flex;flex-direction:column;gap:1rem;padding-bottom:1.6rem;border-bottom:2px solid var(--ink)}
+.cta{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:.4rem}
+.btn{display:inline-block;padding:.7rem 1.2rem;border-radius:999px;text-decoration:none;font-weight:500;
+  border:1.5px solid var(--accent);color:var(--accent);background:transparent}
+.btn.primary{background:var(--accent);color:var(--ground)}
+section{display:flex;flex-direction:column;gap:.9rem}
+.transcript{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+  padding:1.1rem 1.25rem;display:flex;flex-direction:column;gap:.8rem;font-size:.97rem}
+.turn b{color:var(--accent);font-weight:500;font-family:var(--mono);font-size:.78rem;display:block;margin-bottom:.15rem}
+.tag{font-family:var(--mono);font-size:.68rem;padding:.05em .45em;border-radius:4px;white-space:nowrap}
+.tag.obs{color:var(--accent);border:1px solid var(--accent);background:var(--accent-soft)}
+.tag.asm{color:var(--assumed);border:1px dashed var(--assumed)}
+.tag.nd{color:var(--nodata);border:1px dotted var(--nodata);text-decoration:line-through}
+.steps{display:flex;flex-direction:column;gap:.8rem;counter-reset:s}
+.step{display:grid;grid-template-columns:2.2rem 1fr;gap:.8rem;align-items:start}
+.step::before{counter-increment:s;content:counter(s);font-family:var(--mono);font-size:.9rem;
+  width:2.2rem;height:2.2rem;border-radius:50%;background:var(--accent);color:var(--ground);
+  display:flex;align-items:center;justify-content:center;font-weight:500}
+.step p{font-size:.97rem}
+code{font-family:var(--mono);font-size:.85em;background:var(--raise);padding:.1em .4em;border-radius:4px;
+  direction:ltr;unicode-bidi:embed}
+pre{margin:0;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+  padding:.9rem 1rem;overflow-x:auto;direction:ltr;text-align:left;font-family:var(--mono);font-size:.85rem}
+.refuse{display:grid;grid-template-columns:1fr;gap:.6rem}
+@media(min-width:40rem){.refuse{grid-template-columns:1fr 1fr}}
+.refuse div{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+  padding:.85rem 1rem;font-size:.93rem;border-inline-start:4px solid var(--accent)}
+.refuse div b{display:block;margin-bottom:.15rem}
+.roles{display:grid;grid-template-columns:repeat(3,1fr);gap:.5rem}
+@media(max-width:30rem){.roles{grid-template-columns:repeat(3,1fr)}}
+.roles div{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:.55rem .6rem;
+  text-align:center;font-size:.86rem}
+.roles div span{display:block;font-family:var(--mono);font-size:.62rem;letter-spacing:.06em;color:var(--muted)}
+.faq details{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:.7rem 1rem}
+.faq summary{cursor:pointer;font-weight:500}
+.faq p{margin-top:.5rem;font-size:.93rem;color:var(--muted)}
+.foot{font-size:.8rem;color:var(--muted);border-top:1px solid var(--line);padding-top:1rem;
+  display:flex;flex-wrap:wrap;gap:.4rem 1.2rem;justify-content:space-between}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="top">
+    <span>شورا · Shora</span>
+    <a href="en.html">English</a>
+  </div>
+
+  <header class="hero">
+    <h1>تیم تصمیم‌گیری مدیریتی، داخل Claude</h1>
+    <p class="lead">یک تصمیم کاری دارید. <b>نُه نفر</b> سر میز می‌نشینند، جلسه می‌گذارند، وسط جلسه از خودتان می‌پرسند، و یک تصمیم با <b>مسئول و تاریخ</b> تحویل می‌دهند. برای هر کسب‌وکاری، از قنادی تا کارخانه.</p>
+    <p class="lead">و یک قول: <b>عدد نمی‌سازد.</b> هر رقم می‌گوید از کجا آمده.</p>
+    <div class="cta">
+      <a class="btn primary" href="#try">سه قدم تا اولین جلسه</a>
+      <a class="btn" href="demo-fa.html">یک جلسه‌ی کامل را ببینید</a>
+    </div>
+  </header>
+
+  <section>
+    <h2>این‌طور حرف می‌زنند</h2>
+    <div class="transcript">
+      <div class="turn"><b>فرهاد (کاشف)</b>یک لحظه. اول جلسه گفتی پنجشنبه‌ها برای دو تا دفتر جعبه می‌فرستید. یعنی مسیر تحویل و مشتری شرکتی را دارید و هیچ‌کس نشمرده؟</div>
+      <div class="turn"><b>مریم (تحلیل‌گر)</b>شعبه‌ی دوم را حساب کردم. اجاره ۲۸، حقوق چهار نفر ۹۶، انرژی ۱۵. ماهی ۱۳۹ میلیون <span class="tag asm">فرض</span>. یعنی روزی ۴۶ سفارش. شعبه‌ی فعلی روزی ۱۲۹ تا دارد <span class="tag obs">مشاهده‌شده</span>. سفارش روزانه در محله‌ی جدید <span class="tag nd">بدون داده</span>.</div>
+      <div class="turn"><b>شیرین (هماهنگ‌کننده)</b>جلسه را همین‌جا نگه می‌دارم. این را خود شما می‌دانید و ما داریم حدس می‌زنیم. ساعت شش که صف می‌شود، تقریباً چند نفر بدون خرید می‌روند؟</div>
+      <div class="turn"><b>بهرام (نقاد)</b>آن ۴۲ درصد مال آرد پارسال است. با ۳۵ درصد، سربه‌سر می‌رود روی ۵۵ تا در روز. عددی که کل تصمیم روی آن سوار است، خودش فرض است.</div>
+    </div>
+    <p style="font-size:.9rem;color:var(--muted)">نمونه‌ی بالا یک قنادی خیالی است. صفحه‌ی کاملش را با تصمیم، جدول کارها، SWOT و سه سناریو <a href="demo-fa.html">اینجا ببینید</a>.</p>
+  </section>
+
+  <section>
+    <h2>نُه نقش</h2>
+    <div class="roles">
+      <div>ایده‌پرداز<span>Ideator</span></div>
+      <div>کاشف<span>Spotter</span></div>
+      <div>تحلیل‌گر<span>Analyst</span></div>
+      <div>نتیجه‌گیر<span>Closer</span></div>
+      <div>سازمان‌دهنده<span>Organizer</span></div>
+      <div>کنترلر<span>Controller</span></div>
+      <div>مشاور<span>Advisor</span></div>
+      <div>نقاد<span>Critic</span></div>
+      <div>هماهنگ‌کننده<span>Coordinator</span></div>
+    </div>
+    <p style="font-size:.93rem;color:var(--muted)">نقاد آخر حرف می‌زند، بعد از اینکه نقشه ساخته شد. هر نقش شخصیت و طرز حرف‌زدن خودش را دارد.</p>
+  </section>
+
+  <section id="try">
+    <h2>سه قدم تا اولین جلسه</h2>
+    <div class="steps">
+      <div class="step"><p><b>یک حساب Claude داشته باشید.</b> شورا داخل Claude کار می‌کند و خودش رایگان است. برنامه‌ی Claude Code را از claude.com بگیرید. اگر فقط claude.ai دارید، پایین صفحه بخوانید.</p></div>
+      <div class="step"><p><b>این دو خط را در Claude Code بنویسید.</b></p>
+<pre>/plugin marketplace add mahdifooladvand/shora
+/plugin install shora@shora</pre></div>
+      <div class="step"><p><b>موضوع را بگویید.</b> مثلاً: «جلسه بذار درباره‌ی اینکه شعبه‌ی دوم بزنیم یا نه». سه سؤال کوتاه می‌پرسد، جلسه شروع می‌شود، و وسطش برای عددهایی که فقط شما دارید می‌ایستد.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>چه کارهایی را نمی‌کند</h2>
+    <div class="refuse">
+      <div><b>عدد نمی‌سازد.</b> اندازه‌ی بازار، نرخ رشد، درآمد رقیب: اگر شما ندهید، «بدون داده» می‌نویسد و می‌گوید چطور می‌شود فهمید.</div>
+      <div><b>حدس را اندازه‌گیری جا نمی‌زند.</b> هر رقم سه برچسب دارد: مشاهده‌شده، فرض، بدون داده. حساب‌کردن، فرض را مشاهده نمی‌کند.</div>
+      <div><b>بازرسی مخفی از پرسنل طراحی نمی‌کند.</b> کنترلی که نشود برای تیم بلند خواند، تله است.</div>
+      <div><b>مشاوره‌ی حقوقی، مالیاتی یا پزشکی نمی‌دهد.</b> می‌گوید از چه کسی بپرسید.</div>
+    </div>
+  </section>
+
+  <section class="faq">
+    <h2>سؤال‌های رایج</h2>
+    <details><summary>Claude Code ندارم، فقط claude.ai دارم.</summary><p>پوشه‌ی مهارت را از گیت‌هاب دانلود کنید و محتوای آن را به‌عنوان یک مهارت یا در دستورهای یک Project بارگذاری کنید. راهنمای کامل در صفحه‌ی گیت‌هاب هست. توقف وسط جلسه و صفحه‌ی مدیر در claude.ai هم کار می‌کند؛ فقط ذخیره‌ی خودکار فایل ندارد.</p></details>
+    <details><summary>اطلاعات شرکت من کجا می‌رود؟</summary><p>شورا یک فایل متنی است که به Claude می‌گوید چطور جلسه بگذارد. هیچ سرور، حساب یا سرویس دیگری ندارد. آنچه می‌نویسید همان‌جایی می‌رود که هر گفت‌وگوی دیگرتان با Claude می‌رود، و صفحه‌ی مدیر روی کامپیوتر خودتان ذخیره می‌شود.</p></details>
+    <details><summary>به انگلیسی هم کار می‌کند؟</summary><p>بله. به هر زبانی که بنویسید همان زبان جواب می‌دهد. راهنمای انگلیسی <a href="en.html">اینجاست</a>.</p></details>
+    <details><summary>هزینه دارد؟</summary><p>خود شورا رایگان و متن‌باز است، با مجوز MIT. هزینه‌ی Claude با خودتان است.</p></details>
+    <details><summary>مشکل یا پیشنهاد دارم.</summary><p>در صفحه‌ی گیت‌هاب یک Issue باز کنید. مفیدترین چیزی که می‌شود اضافه کرد، یادداشت صنعت شماست: کنترلر در صنعت شما دقیقاً چه چیزی را بازرسی می‌کند.</p></details>
+  </section>
+
+  <footer class="foot">
+    <a href="https://github.com/mahdifooladvand/shora">github.com/mahdifooladvand/shora</a>
+    <span>MIT · نُه نقشِ شورا هستند، نه کارکنان شرکت شما</span>
+  </footer>
+
+</div>
+</body>
+</html>

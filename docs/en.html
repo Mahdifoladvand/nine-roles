@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Shora</title>
+<meta name="description" content="Shora: a management decision team for Claude. Nine roles run a real meeting, stop to ask you what only you know, and hand back a decision with owners and dates. Never invents a number.">
+<meta property="og:title" content="Shora, a management decision team">
+<meta property="og:description" content="Nine roles, one table, one decision. For any business. Never invents a number.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  --ground:#F1F4F2; --surface:#FFFFFF; --raise:#E9EEEB;
+  --ink:#0F1A16; --muted:#5B6A65; --line:#D6DEDA;
+  --accent:#0B5B4F; --accent-soft:#E2EFEB; --assumed:#8A5A00; --nodata:#5B6A65;
+  --radius:12px;
+  --sans:"Peyda","Vazirmatn",Tahoma,"Segoe UI",system-ui,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Consolas,"Peyda",Tahoma,monospace;
+}
+@media (prefers-color-scheme:dark){
+  :root{
+    --ground:#0D1412; --surface:#131E1A; --raise:#182722;
+    --ink:#E4EDE9; --muted:#93A39D; --line:#25332E;
+    --accent:#6FD3BE; --accent-soft:#17302B; --assumed:#E0A94A; --nodata:#93A39D;
+  }
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--sans);line-height:1.8;
+  -webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.page{max-width:44rem;margin:0 auto;padding:clamp(1.2rem,4vw,3rem) clamp(1rem,4vw,2rem) 5rem;
+  display:flex;flex-direction:column;gap:2.4rem}
+.top{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;
+  font-family:var(--mono);font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.top a{text-decoration:none}
+h1{margin:0;font-size:clamp(2rem,7vw,3rem);font-weight:700;line-height:1.2;text-wrap:balance}
+h2{margin:0;font-size:1.15rem;font-weight:700;line-height:1.4}
+p{margin:0}
+.lead{font-size:1.1rem;max-width:36rem}
+.lead b{color:var(--accent)}
+.hero{display:flex;flex-direction:column;gap:1rem;padding-bottom:1.6rem;border-bottom:2px solid var(--ink)}
+.cta{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:.4rem}
+.btn{display:inline-block;padding:.7rem 1.2rem;border-radius:999px;text-decoration:none;font-weight:500;
+  border:1.5px solid var(--accent);color:var(--accent);background:transparent}
+.btn.primary{background:var(--accent);color:var(--ground)}
+section{display:flex;flex-direction:column;gap:.9rem}
+.transcript{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+  padding:1.1rem 1.25rem;display:flex;flex-direction:column;gap:.8rem;font-size:.97rem}
+.turn b{color:var(--accent);font-weight:500;font-family:var(--mono);font-size:.78rem;display:block;margin-bottom:.15rem}
+.tag{font-family:var(--mono);font-size:.68rem;padding:.05em .45em;border-radius:4px;white-space:nowrap}
+.tag.obs{color:var(--accent);border:1px solid var(--accent);background:var(--accent-soft)}
+.tag.asm{color:var(--assumed);border:1px dashed var(--assumed)}
+.tag.nd{color:var(--nodata);border:1px dotted var(--nodata);text-decoration:line-through}
+.steps{display:flex;flex-direction:column;gap:.8rem;counter-reset:s}
+.step{display:grid;grid-template-columns:2.2rem 1fr;gap:.8rem;align-items:start}
+.step::before{counter-increment:s;content:counter(s);font-family:var(--mono);font-size:.9rem;
+  width:2.2rem;height:2.2rem;border-radius:50%;background:var(--accent);color:var(--ground);
+  display:flex;align-items:center;justify-content:center;font-weight:500}
+.step p{font-size:.97rem}
+code{font-family:var(--mono);font-size:.85em;background:var(--raise);padding:.1em .4em;border-radius:4px;
+  direction:ltr;unicode-bidi:embed}
+pre{margin:0;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+  padding:.9rem 1rem;overflow-x:auto;direction:ltr;text-align:left;font-family:var(--mono);font-size:.85rem}
+.refuse{display:grid;grid-template-columns:1fr;gap:.6rem}
+@media(min-width:40rem){.refuse{grid-template-columns:1fr 1fr}}
+.refuse div{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+  padding:.85rem 1rem;font-size:.93rem;border-inline-start:4px solid var(--accent)}
+.refuse div b{display:block;margin-bottom:.15rem}
+.roles{display:grid;grid-template-columns:repeat(3,1fr);gap:.5rem}
+@media(max-width:30rem){.roles{grid-template-columns:repeat(3,1fr)}}
+.roles div{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:.55rem .6rem;
+  text-align:center;font-size:.86rem}
+.roles div span{display:block;font-family:var(--mono);font-size:.62rem;letter-spacing:.06em;color:var(--muted)}
+.faq details{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:.7rem 1rem}
+.faq summary{cursor:pointer;font-weight:500}
+.faq p{margin-top:.5rem;font-size:.93rem;color:var(--muted)}
+.foot{font-size:.8rem;color:var(--muted);border-top:1px solid var(--line);padding-top:1rem;
+  display:flex;flex-wrap:wrap;gap:.4rem 1.2rem;justify-content:space-between}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="top">
+    <span>Shora · شورا</span>
+    <a href="index.html">فارسی</a>
+  </div>
+
+  <header class="hero">
+    <h1>A management decision team, inside Claude</h1>
+    <p class="lead">You have a business decision. <b>Nine roles</b> sit at the table, run the meeting, stop halfway to ask you what only you know, and hand back a decision with <b>owners and dates</b>. For any business, from a bakery to a factory.</p>
+    <p class="lead">One promise: <b>it never invents a number.</b> Every figure says where it came from.</p>
+    <div class="cta">
+      <a class="btn primary" href="#try">Three steps to your first meeting</a>
+      <a class="btn" href="demo-fa.html">See a full meeting page</a>
+    </div>
+  </header>
+
+  <section>
+    <h2>This is how they talk</h2>
+    <div class="transcript">
+      <div class="turn"><b>Farid (Spotter)</b>Hold on. At the start you said you send boxes to two offices on Thursdays. So you already have a delivery route and corporate customers, and nobody has counted them?</div>
+      <div class="turn"><b>Marta (Analyst)</b>I worked out the second branch. Rent 28, four salaries 96, energy 15. That is 139M a month <span class="tag asm">assumed</span>. It needs 46 orders a day. The branch you have does 129 <span class="tag obs">observed</span>. Daily orders in the new neighbourhood: <span class="tag nd">no data</span>.</div>
+      <div class="turn"><b>Sheila (Coordinator)</b>Stopping the meeting here. You know this and we are guessing. When the queue forms at six, roughly how many people leave without buying?</div>
+      <div class="turn"><b>Bruno (Critic)</b>That 42 percent margin is last year's flour. At 35 the break-even goes to 55 a day. The number this whole decision sits on is itself an assumption.</div>
+    </div>
+    <p style="font-size:.9rem;color:var(--muted)">The company above is fictional. The full page, with the decision, the owners table, the SWOT and three scenarios, is <a href="demo-fa.html">here</a> (the demo is in Persian; the tool answers in your language).</p>
+  </section>
+
+  <section>
+    <h2>The nine roles</h2>
+    <div class="roles">
+      <div>Ideator<span>options</span></div>
+      <div>Spotter<span>catches the remark</span></div>
+      <div>Analyst<span>market, technical, money</span></div>
+      <div>Closer<span>first action, 48h</span></div>
+      <div>Organizer<span>who does what</span></div>
+      <div>Controller<span>inspects</span></div>
+      <div>Advisor<span>facts, priced</span></div>
+      <div>Critic<span>speaks last</span></div>
+      <div>Coordinator<span>runs the table</span></div>
+    </div>
+    <p style="font-size:.93rem;color:var(--muted)">The Critic speaks after the plan exists, never before. Each role has a name, a personality and a way of talking.</p>
+  </section>
+
+  <section id="try">
+    <h2>Three steps to your first meeting</h2>
+    <div class="steps">
+      <div class="step"><p><b>Have a Claude account.</b> Shora runs inside Claude and is free itself. Get the Claude Code app from claude.com. If you only use claude.ai, see the questions below.</p></div>
+      <div class="step"><p><b>Type these two lines in Claude Code.</b></p>
+<pre>/plugin marketplace add mahdifooladvand/shora
+/plugin install shora@shora</pre></div>
+      <div class="step"><p><b>Say the topic.</b> For example: "hold a meeting about whether we open a second branch". It asks three short questions, starts the meeting, and stops halfway for the numbers only you have.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>What it refuses to do</h2>
+    <div class="refuse">
+      <div><b>Invent a number.</b> Market size, growth rate, a competitor's revenue: if you did not supply it, it writes "no data" and says how to find out.</div>
+      <div><b>Pass a guess off as a measurement.</b> Every figure carries one of three tags: observed, assumed, no data. Arithmetic does not turn an assumption into an observation.</div>
+      <div><b>Design secret tests on your staff.</b> A check you could not read aloud to the team is a trap.</div>
+      <div><b>Give legal, tax or medical advice.</b> It tells you who to ask.</div>
+    </div>
+  </section>
+
+  <section class="faq">
+    <h2>Questions</h2>
+    <details><summary>I use claude.ai, not Claude Code.</summary><p>Download the skill folder from GitHub and upload its contents as a skill, or paste it into a Project's instructions. The full guide is on the GitHub page. The mid-meeting stop and the manager page work there too; only the automatic file save does not.</p></details>
+    <details><summary>Where does my company's information go?</summary><p>Shora is a text file that tells Claude how to run a meeting. It has no server, no account and no service of its own. What you type goes where every other Claude conversation goes, and the manager page is saved on your own computer.</p></details>
+    <details><summary>Does it work in my language?</summary><p>Yes. It answers in whatever language you write. Persian has its own guide <a href="index.html">here</a>.</p></details>
+    <details><summary>What does it cost?</summary><p>Shora is free and open source under the MIT licence. Claude's own subscription is yours.</p></details>
+    <details><summary>I found a problem, or I have an idea.</summary><p>Open an issue on the GitHub page. The most useful thing to add is a note for your industry: what a controller in your field actually inspects.</p></details>
+  </section>
+
+  <footer class="foot">
+    <a href="https://github.com/mahdifooladvand/shora">github.com/mahdifooladvand/shora</a>
+    <span>MIT · the nine are council roles, not your staff</span>
+  </footer>
+
+</div>
+</body>
+</html>
